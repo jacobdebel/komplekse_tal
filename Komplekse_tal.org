@@ -1,0 +1,1249 @@
+#+title: Komplekse tal
+#+subtitle: Supplerende stof
+#+author: Matematik A
+#+date: Vibenshus Gymnasium 
+#+latex_class: article
+#+latex_class_options: [a4paper, 12pt,titlepage]
+#+language: da
+#+latex_header: \usepackage[danish]{babel}
+#+latex_header: \usepackage{mathtools}
+#+latex_header: \usepackage[margin=3.0cm]{geometry}
+#+latex_header: \hypersetup{colorlinks, linkcolor=black, urlcolor=blue}
+#+latex_header: \usepackage{titlepic}
+#+latex_header: \titlepic{\includegraphics[width=9cm]{img/e_to_the_pi_times_i.png}}
+#+latex_header_extra: \setlength{\parindent}{0em}
+#+latex_header_extra: \parskip 1.5ex
+#+options: ^:{} tags:nil toc:t todo:nil num:t timestamp:nil
+
+
+#+begin_abstract
+Dette kompendium omhandler komplekse tal. Det er stærkt inspireret af / frit oversat fra /Mathematical Methods for Physics and Engineering/, Second Edition, K.F. Riley, M.P. Hobson og S.J. Bence.
+#+end_abstract
+
+* Behovet for komplekse tal
+
+Komplekse tal bruges i mange grene af matematikken (dog ikke umiddelbart i gymnasiet), men de opstår som udgangspunkt ved løsning af polynomiske ligninger. Som eksempel undersøges en specifik andengradsligning.
+
+Betragt andengradsligningen
+
+#+name: andengrad
+\begin{equation}
+    z^2 -4 z +5 = 0 
+\end{equation}
+
+Denne andengradsligning løses på sædvanlig vis
+
+#+name: kompleks
+\begin{align}
+    z_{1,2} &= \frac{-b \pm \sqrt{b^2 - 4 \cdot a \cdot c}}{2 a} \nonumber\\
+    z_{1,2} &= \frac{4 \pm \sqrt{\left(-4\right)^2 - 4 \cdot 1 \cdot 5}}{2 \cdot 1} \nonumber\\
+    z_{1,2} &= 2 \pm \frac{\sqrt{-4}}{2} \,.
+\end{align}
+
+Begge løsninger indeholder kvadratroden af negative tal, hvilket ikke kan løses ved hjælp af de reelle tal. Det er dog ikke sandt at sige, at der ingen løsninger er til andengradsligningen. /Algebraens fundamentalsætning/ siger, at en andengradsligning altid vil have to løsninger. Disse to er faktisk givet ved ligning ([[kompleks]]). Det andet led på højre side af ligning \eqref{kompleks} kaldes et /imaginært/ led, da det indeholder kvadratroden af et negativt tal. Det første led kaldes et /reelt/ led. Den fulde løsning er summen af et reelt led og et imaginært led. Denne løsning kaldes et /komplekst/ tal. Et plot af ligning ([[andengrad]]) som et andengradspolynomium $f(z)=z^2-4 z +5$ kan ses på figur [[fz]]. Det kan ses, at $f(z)$ ikke skærer $z$​-aksen, hvilket svarer til, at ligningen $f(z)=0$ ingen rene reelle løsninger har.
+
+#+name: fz
+#+caption: Funktionen $f(z) = z^2 -4z +5$.
+[[./img/fz_small.png]]
+
+
+Symbolet $z$ er ikke valgt tilfældigt. Det er konventionen at repræsentere komplekse tal ved netop $z$, hvor $z$ er summen af en reel del $x$ og $i$ multipliceret med en imaginær del $y$, udtrykt på følgende måde
+
+$$z=x+i y \, ,$$
+
+hvori $i$[fn::Det skal nævnes, at nogle fysikere og særligt ingeniører bruger $j$ i stedet for $i$.] betegner kvadratroden af $-1$, altså $i=\sqrt{-1}$. Den reelle del $x$ og den imaginære del $y$ betegnes typisk henholdsvis ved $Re(z)$ og $Im(z)$. 
+
+I dette specifikke eksempel gælder at $\sqrt{-4} =2 \sqrt{-1} = 2 i$, hvorved de to løsninger til ligning ([[andengrad]]) kan skrives som
+
+$$z_{1,2} = 2 \pm \frac{2 i}{2} = 2 \pm i\,.$$
+
+Af dette kan det ses, at $x=2$ og $y=\pm 1$.
+
+For at kunne skrive komplekse tal mere kompakt op, bruges sommetider notationsformen
+
+$$z = (x,y) \,,$$
+
+hvor $z$'s komponenter kan betragtes som koordinater i et $xy$​-plot. Et sådant plot kaldes et /Argand-diagram/ og er en gængs repræsentation af komplekse tal. Et eksempel på et Argand-diagram kan ses på figur [[argand]]. Argand-diagrammet kaldes undertiden også for det /komplekse talplan/.
+
+#+caption: Et eksempel på et Argand-diagram.
+#+name: argand
+[[./img/argand.png]]
+
+Eksemplet med løsningen af en andengradsligning kan generaliseres til løsning af andre polynomier med ordeiner større end 2, f.eks. 3., 4. osv. For et generelt $n$​'te-gradspolynomium $f(z)$ gælder det, at der er præcis $n$ løsninger til ligningen $f(z)=0$.
+
+Resten af dette kompendium vil uddybe komplekse tals algebra, deres polære repræsentation, komplekse eksponential- og logaritmefunktioner, bestemmelse af rødderne i polynomiske ligninger samt anvendelse af komplekse tal i forbindelse med differential- og integralregning.
+
+* Manipulation af komplekse tal
+
+Dette afsnit omhandler de basale regneoperationer for komplekse tal. Der vil være visse ligheder med vektorregning.
+
+** Addition og subtraktion
+
+Generelt giver addition af to komplekse tal, $z_1$ og $z_2$, et andet komplekst tal. De reelle dele og imaginære dele adderes hver for sig på samme måde som for reelle tal.
+
+$$z_1 + z_2 = (x_1 + i y_1) + (x_2 + i y_2) = (x_1 + x_2) + i ( y_1 + y_2) \, ,$$
+
+Et Argand-diagram for addition af to komplekse tal kan ses på figur [[argand_addition]]. Læg mærke til ligheden med addition af vektorer ved hjælp af et parallelogram.
+
+#+name: argand_addition
+#+caption: Argand-diagrammet for addition af to komplekse tal. Læg mærke til ligheden med vektoraddition.
+[[./img/argand_addition.png]]
+
+Yderligere skal det siges, at rækkefølgen for addition af komplekse tal er ligegyldig, da det gælder at
+
+\begin{align*}
+    z_1 + z_2 &= z_2 + z_1 & &\text{Kommutative lov}\\
+    z_1 + (z_2 + z_3) &= (z_1 + z_2) + z_3 \,. & &\text{Associative lov}
+\end{align*}
+
+*** *Eksempel* 
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+/Addition af de følgende komplekse tal/
+
+- $z_1 = 1 + 2i$
+- $z_2 = 3-4i$
+- $z_3 = -2 +i$
+
+Først adderes de reelle dele
+
+$$x_1 + x_2 + x_3 = 1 + 3 - 2 = 2\,,$$
+
+derefter addition af de imaginære dele
+
+$$i y_1 + i y_2 + i y_3 = 2i - 4i + i = -i \,.$$
+
+Alt i alt bliver summen af de tre komplekse tal følgende
+
+$$z_1+z_2+z_3 = (1+2i) + (3-4i) + (-2+i) = 2 - i \quad \triangle$$
+
+Subtraktion af komplekse tal foregår meget lig addition, hvor de reelle dele og imaginære dele subtraheres hver for sig. Lige som for reelle tal vil resultatet af subtraktion af to ens komplekse tal være nul.
+
+** Modulus og argument
+
+/Modulus/ for et komplekst tal $z$ betegnes $\lvert z \rvert$, og er defineret som
+
+#+name: modulus
+\begin{equation}
+    \lvert z \rvert = \sqrt{x^2 + y^2} \, . 
+\end{equation}
+
+Modulus svarer til længden mellem det komplekse tals placering i det komplekse plan og origo. Sammenlignet med vektorregning svarer det til længden af en stedvektor.
+
+/Argumentet/ af et komplekst tal benævnes $arg(z)$, og er defineret som
+
+#+name: argument
+\begin{equation}
+    arg(z) = \tan^{-1} \left(\frac{y}{x}\right) \,. 
+\end{equation}
+
+Modulus og argument er begge tegnet ind i Argand-diagrammet på figur [[modulus_og_argument]].
+
+#+name: modulus_og_argument
+#+caption: Modulus og argument for et komplekst tal indtegnet i et Arganddiagram.
+[[./img/modulus_og_argument.png]]
+
+Det kan ses, at argumentet af $z$ er vinklen mellem den positive reelle akse og linjen som forbinder origo og det komplekse tal. Vinklen måles i positiv omløbsretning, altså imod urets retning. Når argumentet af $z$ skal beregnes skal man lægge særligt mærke til fortegnene for både $x$ og $y$, for at kunne afgøre, i hvilken kvadrant $arg(z)$ er beliggende. Hvis f.eks. både $x$ og $y$ er negative, vil $arg(z)$ ligge i intervallet $-\pi < arg(z) < -\frac{\pi}{2}$ (tredje kvadrant) i stedet for i første kvadrant, som er i intervallet $0 < arg(z) < \frac{\pi}{2}$. Denne information vil går ellers tabt, når forholdet mellem $y$ og $x$ bestemmes.
+
+*** /Eksempel/ 
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+/Find modulus og argument af det komplekse tal $z=2-3i$./
+
+Først benyttes ligning ([[modulus]]) til at bestemme modulus.
+
+$$|z| = \sqrt{x^2+y^2} = \sqrt{2^2+(-3)^2} = \sqrt{13} \,.$$
+
+Argumentet af $z$ bestemmes vha. ligning ([[argument]]).
+
+$$arg(z) = \tan^{-1}\left(\frac{y}{x}\right) =\tan^{-1}\left(\frac{-3}{2}\right) =-0.9828 \,.$$
+
+Dette stemmer overens med at $z$ er beliggende i 4. kvadrant $\triangle$.
+
+** Multiplikation
+
+Komplekse tal kan multipliceres med hinanden, hvilket generelt resulterer i endnu et komplekst tal. Produktet af to komplekse tal $z_1$ og $z_2$ bestemmes ved at multiplicere dem fuldt ud og huske på at $i^2 = -1$. Dette er vist i det efterfølgende:
+
+\begin{align*}
+    z_1 \cdot z_2 &= (x_1 + i y_1) \cdot (x_2 + i y_2) \\
+                  &= x_1 x _2 + i x_1 y_2 + i y_1 x_2 + i^2 y_1 y_2 \\
+                  &= (x_1 x_2 - y_1 y_2) + i (x_1 y_2 + y_1 x_2) \, .
+\end{align*}
+
+*** /Eksempel/ 
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+/Multiplicer de komplekse tal $z_1=3 + 2i$ og $z_2 = -1 -4i$./
+
+Direkte multiplikation giver
+
+\begin{align*}
+    z_1 \cdot z_2 &= (3+2i) \cdot (-1 -4i) \\
+                  &= -3 -2i - 12i -8 i^2 \\
+                  &= 5-14i \quad \triangle
+\end{align*}
+
+Multiplikation af komplekse tal er både kommutativ og associativ, hvilket betyder, at rækkefølgen af de to faktorer er lige gyldig, samt at rækkefølgen af multiplikation af flere end to komplekse tal også er lige gyldig. Dette illustreres ved
+
+\begin{align}
+    z_1 \cdot z_2 &= z_2 \cdot z_1 & &\text{Kommutativ lov}\\
+    (z_1 \cdot z_2)\cdot z_3 &= z_1 \cdot (z_2\cdot z_3) & &\text{Associativ lov} 
+\end{align}
+
+Produktet af to komplekse tal har yderligere følgende simple sammenhænge
+
+\begin{align}
+    |z_1\cdot z_2| &= |z_1| \cdot |z_2|  \label{modu} \\
+    arg(z_1 \cdot z_2) &= arg(z_1) + arg(z_2) \,. \label{argu}
+\end{align}
+
+Begge sammenhænge vil blive udledt senere i kompendiet.
+
+*** /Eksempel/
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+/Eftervis at ligning \eqref{modu} gælder for de komplekse tal $z_1=3+2i$ og $z_2 = -1 -4i$, altså de samme komplekse tal, som i forrige eksempel./
+
+Fra forrige eksempel har vi
+
+$$z_1 \cdot z_2 = 5-14i$$
+
+Modulus af denne størrelse er
+
+$$|z_1 \cdot z_2 |= |5-14i| = \sqrt{5^2 +(-14)^2} = \sqrt{221}\,.$$
+
+Modulus for hver af de komplekse tal er
+
+\begin{align*}
+    |z_1| &= \sqrt{3^2+2^2} = \sqrt{13} \\
+    |z_2| &= \sqrt{(-1)^2+(-4)^2} = \sqrt{17}
+\end{align*}
+
+Dette giver da
+
+$$|z_1| \cdot |z_2| = \sqrt{13} \cdot \sqrt{17} = \sqrt{13 \cdot 17} = \sqrt{221} = |z_1 \cdot z_2|\,.$$
+
+Hermed er ligning \eqref{modu} eftervist for de netop valgte komplekse tal. $\triangle$
+
+Nu undersøges effekten af at multiplicere et komplekst tal med henholdsvis $\pm 1$ og $\pm i$. Disse fire multiplikatorer har alle modulus på 1. Fra ligning \eqref{modu} kan det ses, at et komplekst tal, $z$, multipliceret med en af disse fire multiplikatorer giver et produkt, som har samme modulus som $z$. Yderligere kan det ses af ligning \eqref{argu}, at argumentet for multiplikation af $z$ med en af de fire nævnte multiplikatorer vil give summen af argumenterne hver for sig. Det kan da nu ses, at
+
+- $1 \cdot z= z$ : $z$ forbliver uændret ved multiplikation med $1$.
+
+- $-1 \cdot z$ : Modulus forbliver uændret, mens argumentet ændres med vinklen $\pi$. Dette svarer til at $z$ roteres en halv omgang omkring origo i Argand-diagrammet.
+
+- $i \cdot z$ : $z$ roteres $\frac{\pi}{2}$ omkring origo. Altså en kvart omgang i positiv omløbsretning.
+
+- $-i \cdot z$ : $z$ roteres $-\frac{\pi}{2}$ omkring origo. Altså en kvart omgang i negativ omløbsretning.
+
+Disse geometriske fortolkninger af multiplikation med de fire multiplikatorer 1, -1, $i$ og $-i$ kan ses på figur [[multiplikation]].
+
+#+caption: Multiplikation af et komplekst tal og $\pm 1$ samt $\pm i$.
+#+name: multiplikation
+[[./img/multiplikation.png]]
+
+*** /Eksempel/ 
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+/Benyt den geometriske fortolkning af multiplikation med $i$ til at bestemme produktet $i \cdot (1-i)$./
+
+$1-i$ har argumentet 
+
+$$arg(1-i) = \tan^{-1}\left( \frac{-1}{1}\right) = -\frac{\pi}{4}$$
+
+og modulus
+
+$$|1-i| = \sqrt{1^2+(-1)^2} = \sqrt{2}\,.$$
+
+$1-i$ ligger altså i 4. kvadrant svarende til $45^\circ$ under den reelle akse. Ved at multiplicere med $i$ forbliver modulus på $\sqrt{2}$, mens argumentet drejes $\frac{\pi}{2}$ i positiv omløbsretning, hvilket resulterer i et argument på $+\frac{\pi}{4}$. Det komplekse tal med dette modulus og argument er $1+i$, hvilket vil sige, at
+
+$$i\cdot(1-i) = 1+i\,.$$
+
+Dette kan simpelt verificeres ved direkte multiplikation
+
+$$i\cdot(1-i) = i - i^2 = i - (-1) = 1 +i \,. \quad \triangle$$
+
+Division af to komplekse tal foregår på tilsvarende vis som for multiplikation, men kræver kendskab til begrebet /kompleks konjugation/, hvilket derfor vil blive introduceret først.
+
+** Kompleks konjugation
+
+For det komplekse tal $z=x+iy$ findes det *kompleks konjugerede* tal $z^*$ ved simpelt at ændre fortegnet på den imaginære del af $z$. Det vil sige for
+
+\begin{align*}
+    z&=x+iy \to \\
+    z^*&=x-iy \,.
+\end{align*}
+
+Mere generelt kan det kompleks konjugerede tal til $z$ defineres som det (komplekse) tal, der har samme modulus som $z$ selv, og som ved multiplikation med $z$ resulterer i et reelt tal. Det vil sige, at der ingen imaginær del er i produktet $z \cdot z^*$.
+
+I det tilfælde hvor $z$ kan skrives som $z=x+iy$, kan det let verificeres, at $z \cdot z^*$ giver et reelt resultat:
+
+$$z \cdot z^* = (x+iy) \cdot (x-iy) = x^2 -ixy +ixy -i^2 y^2 = x^2 -i^2 y^2 = x^2 -(-1) y^2 = x^2+y^2 = |z|^2 \,.$$
+
+Den geometriske fortolkning af kompleks konjugation svarer til at /spejle/ $z$ i den reelle akse i Argand-diagrammet. Dette kan ses på figur [[fig:konjugation]].
+
+#+caption: Den geometriske fortolkning af kompleks konjugation, som en spejling i den reelle akse.
+#+name: fig:konjugation
+[[./img/konjugation.png]]
+
+*** /Eksempel/ 
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+/Find den kompleks konjugerede til $z=a+2i+3ib$./
+
+Det komplekse tal kan omskrives til
+
+$$z= a +i\cdot(2+3b) \,.$$
+
+Nu skal $i$ erstattes af $-i$ for at finde den kompleks konjugerede
+
+$$z^*= a -i\cdot(2+3b) \,.\quad \triangle$$
+
+I nogle tilfælde er det ikke altid let at skrive udtrykket for $z$ om til standardformen $x+iy$. For to komplekse tal $z_1$ og $z_2$ er det dog let at vise, at den kompleks konjugerede af deres sum eller differens er lig summen eller differencen af deres individuelle kompleks konjugerede. De samme egenskaber gør sig gældende for henholdsvis produkter og kvotienter mellem to komplekse tal. Matematisk kan dette skrives op som
+
+\begin{align*}
+    (z_1 \pm z_2)^* &= z_1^* \pm z_2^* \\
+    (z_1 \cdot z_2)^* &= z_1^* \cdot z_2^* \\
+    \left(\frac{z_1}{z_2}\right)^* &= \frac{z_1^*}{z_2^*} \,.
+\end{align*}
+
+Ved at benytte disse regler er det muligt at bestemme den kompleks konjugerede til et vilkårligt kompliceret udtryk ved at udskifte alle $i$'er i udtrykket med $-i$ og omvendt. Dette kræver dog, at alle imaginære dele er synlige i udtrykket.
+
+*** /Eksempel/ 
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+/Bestem den kompleks konjugerede til det komplekse tal $z=w^{(3y+2ix)}$, hvor $w=x+5i$./
+
+$w$ selv indeholder både reelle og imaginære dele, hvilket skal skrives ud, for at finde den kompleks konjugerede for det samlede udtryk. Dette gøres først for derefter at skifte fortegnet for alle $i$'er:
+
+\begin{align*}
+    z &= w^{(3y+2ix)} \\
+    z &= (x+5i)^{(3y+2ix)} \to \\
+    z^* &= (x-5i)^{(3x-2ix)} \, . \quad \triangle
+\end{align*}
+
+Ud over de føromtalte regler for komplekse tal og deres konjugerede er her fem regler mere, som let kan eftervises. Hvis $z=x+iy$, da gælder det at
+
+\begin{align}
+    \left(z^*\right)^* &= z \\
+    z\cdot z^* &= |z|^2 \\
+    z+ z^* &= 2 \cdot Re(z) = 2 x \\
+    z-z^* &= 2i \cdot Im(z) = 2iy \\
+    \frac{z}{z^*} &= \left(\frac{x^2-y^2}{x^2+y^2} \right) + i \left(\frac{2 x y}{x^2+y^2}\right) \label{kvotient}\,.
+\end{align}
+
+Udledningen af det sidste udtryk kræver kendskab til division af to komplekse tal, hvilket det næste afsnit netop omhandler.
+
+** Division
+
+Division af to komplekse tal har visse ligheder med multiplikation. For de to komplekse tal $z_1= x_1+y_1 i$, $z_2=x_2+y_2 i$ er kvotienten mellem dem
+
+\begin{equation}
+    \frac{z_1}{z_2} = \frac{x_1+y_1 i}{x_2+y_2 i}
+\end{equation}
+
+Her er det svært at skelne den reelle og imaginære del fra hinanden. For at separere den reelle og komplekse del multipliceres både tæller og nævner med den oprindelige nævners kompleks konjugerede. Ud fra definitionen på kompleks konjugation vil dette give et reelt tal i nævneren. Dette giver nu
+
+\begin{align*}
+    \frac{z_1}{z_2} &= \frac{x_1+y_1 i}{x_2+y_2 i} \\
+    \frac{z_1}{z_2} &= \frac{(x_1+y_1 i)\cdot(x_2-y_2 i)}{(x_2+y_2 i)\cdot(x_2-y_2 i)} \\
+    \frac{z_1}{z_2} &= \frac{(x_1 x_2 + y_1 y_2)+i(x_2 y_1 - x_1 y_2)}{x_2^2+y_2^2} \\
+    \frac{z_1}{z_2} &= \frac{x_1 x_2 + y_1 y_2}{x_2^2+y_2^2}+i\frac{x_2 y_1 - x_1 y_2}{x_2^2+y_2^2} 
+\end{align*}
+
+Det kan ses, at den reelle del og den imaginære del nu er adskilt.
+
+I det tilfælde hvor $z_2=z_1^*$, således at $x_2=x_1$ og $y_2=- y_1$, fås det generelle udtryk i ligning \eqref{kvotient}.
+
+*** /Eksempel/ 
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+/Udtryk $z$ på komponentformen, $x+yi$, når $z=\frac{3-2i}{-1+4i}$./
+
+Tæller og nævner multipliceres med den kompleks konjugerede til nævneren
+
+\begin{align*}
+    z &=\frac{3-2i}{-1+4i} \\
+    z &=\frac{(3-2i)(-1-4i)}{(-1+4i)(-1-4i)} \\
+    z &=\frac{-11 -10i}{17} \\
+    z &=\frac{-11}{17} -\frac{10}{17}i \, . \quad \triangle
+\end{align*}
+
+Modulus og argument for kvotienten mellem to komplekse tal har samme egenskaber som produktet mellem dem, nemlig at følgende gælder
+
+\begin{align}
+    \left\lvert\frac{z_1}{z_2}\right\rvert &= \frac{\lvert z_1 \rvert}{\lvert z_2 \rvert} \\
+    arg\left( \frac{z_1}{z_2} \right) &= arg(z_1) - arg(z_2) \,.
+\end{align}
+
+Disse udtryk vil blive bevist i et senere afsnit.
+
+** Polær repræsentation af komplekse tal
+
+I nogle tilfælde er det lettest at betragte et komplekst tal som summen af en reel del og en imaginær del. I andre tilfælde viser det sig at være lettere at benytte den /polære repræsentation/. Denne repræsentationsform gør brug af den komplekse eksponentialfunktion, som er defineret som[fn::Skrevet som en sum er den givet ved $e^z \equiv \sum_{j=0}^{\infty} \frac{z^j}{j!}$.]
+
+#+name: expz
+\begin{equation}
+    e^z = exp(z) \equiv 1 + z + \frac{z^2}{2!} + \frac{z^3}{3!} + \cdots \, . 
+\end{equation}
+
+Ved at benytte de passende serier for $e^{z_1}$ og $e^{z_2}$ er det muligt at vise, at
+
+#+name: ee
+\begin{equation}
+    e^{z_1} \cdot e^{z_2} = e^{z_1+z_2} \,,
+\end{equation}
+
+hvilket stemmer overens med eksponentialregnereglerne for reelle tal.
+
+Nu betragtes eksponeringen af det rent imaginære tal $z=i\theta$, hvor $\theta$ selv er reelt
+
+#+name: taylor
+\begin{equation}
+\begin{aligned}
+    e^z = e^{i\theta}&= 1+ i\theta + \frac{(i \theta)^2}{2!} + \frac{(i\theta)^3}{3!} + \frac{(i\theta)^4}{4!}+ \frac{(i\theta)^5}{5!}+\cdots  \\
+                     &= 1 + i\theta - \frac{\theta^2}{2!} - \frac{i\theta^3}{3!} + \frac{\theta^4}{4!} + \frac{i\theta^5}{5!} +\cdots \\
+                     &=\left(1- \frac{\theta^2}{2!} + \frac{\theta^4}{4!} - \cdots\right) + i \left(\theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!}-\cdots \right) \\
+                     &= \cos \left(\theta\right) + i \sin\left(\theta\right)\,,
+\end{aligned} 
+\end{equation}
+
+hvor den sidste linje gør brug af /Taylor-udviklingerne/​[fn::Taylor-udvikling er et andet interessant emne, som kunne fylde et helt kompendium sig selv. I behøver ikke at bekymre jer yderligere om denne del.] for henholdsvis sinus og cosinus, der er givet ved
+
+\begin{align*}
+    \sin \left(\theta \right) &= \left(\theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!}-\cdots \right) \\
+    \cos \left(\theta \right) &=\left(1- \frac{\theta^2}{2!} + \frac{\theta^4}{4!} - \cdots\right) \,.
+\end{align*}
+
+Udtrykket 
+
+#+name: euler
+\begin{equation}
+    e^{i\theta} = \cos \left(\theta\right) + i \sin \left(\theta\right)
+\end{equation}
+
+er ganske særligt, og kaldes /Eulers ligning/, efter dets opdager Leonhard Euler.
+
+Fra Eulers ligning kan følgende lignende sammenhæng også opskrives
+
+$$e^{i n \theta} = \cos \left(n \theta\right) + i \sin \left(n \theta\right)\,,$$
+
+for alle $n$.
+
+#+caption: Den polære repræsentation af et komplekst tal.
+#+name: fig_euler
+[[./img/euler.png]]
+
+Fra Eulers ligning ([[euler]]) og figur [[fig_euler]] er det muligt at udlede følgende sammenhæng
+
+\begin{align*}
+    r \cdot e^{i\theta} = r \left(\cos\left(\theta\right) + i \sin\left(\theta\right)\right)\\
+    r \cdot e^{i\theta} = x + iy \,.
+\end{align*}
+
+Et komplekst tal kan af disse grunde skrives på  polær form, som
+
+\begin{equation}
+    z = r \cdot e^{i \theta}
+\end{equation}
+
+På figur [[fig_euler]] kan $r$ identificeres som $|z|$ og $\theta$ som $arg(z)$. Denne simple repræsentation for modulus og argument for et komplekst tal er en af hovedgrundene for brugen af den polære notationsform. Vinklen $\theta$ ligger konventionelt i intervallet $-\pi < \theta \leq \pi$, men siden en rotation med $\theta$ er det samme som en rotation med $2 n \pi + \theta$, hvor $n$ er et heltal, gælder
+
+#+name: flere_omgange_euler
+\begin{equation}
+r \cdot e^{i \theta} = r \cdot e^{i(\theta+2 n \pi)} \,.
+\end{equation}
+
+Den algebra, som er tilknyttet den polære repræsentation af et komplekst tal ($z=r \cdot e^{i\theta}$), er forskellig for algebraen for komplekse tal repræsenteret ved henholdsvis en reel del og en imaginær del ($z=x+iy$). Beregningerne på den ene eller anden måde giver dog selvfølgelig det samme resultat. Nogle regneoperationer viser sig at være meget nemmere at udføre på polær form, mens andre er nemmere i komponentform (undertiden også kaldet rektangulær form). Den bedste repræsentationsform for et givent problem afhænger derfor af de krævede beregninger.
+
+** Simple identiteter
+
+Ud fra Eulers ligning ([[euler]]) og ligning ([[flere_omgange_euler]]) samt en figur af den komplekse enhedscirkel er det muligt at argumentere for følgende simple, men brugbare identiteter:
+
+#+name: simple_identiteter
+\begin{equation}
+\begin{aligned}
+1 &= e^{2 \pi k i} \\
+i &= e^{\frac{\pi}{2}i + 2 \pi k i} = e^{\frac{\pi}{2}\left( 4k +1 \right)i}\\
+-1 &= e^{\pi i + 2 \pi k i} = e^{\pi \left( 2k+1 \right)i}\\
+-i &= e^{-\frac{\pi}{2}i+2\pi k i} = e^{\frac{\pi}{2}\left( 4k-1 \right)i}
+\end{aligned}
+\end{equation}
+
+#+name: fig:simple_identiteter
+#+caption: Den komplekse enhedscirkel med simple identiteter indsat.
+#+attr_latex: :width 10cm
+[[./img/kompleks_enhedscirkel_identiteter.png]]
+
+Argumentationen for de førnævnte identiter tager udgangspunkt i figur [[fig:simple_identiteter]]. $1$ ligger på den reelle akse i afstanden 1 fra origo og dermed er argumentet (vinklen med den reelle akse) i første omgang blot lig nul, men ved hjælp af ligning ([[flere_omgange_euler]]) kan det ses, at der kan lægges et helt antal omgange oveni, hvilket er repræsenteret af $2\pi k$. Det samme princip gør sig gældende for de tre resterende identiteter. $i$ ligger op ad den imaginære akse, og har altså et argument på $\frac{\pi}{2}$. Oven i det lægges der et helt antal omgange. $-1$ har i første omgang et argument på $- \pi$, hvor der igen lægges et helt antal omgange oveni. Endelig kan argumentet til $-i$ repræsenteres som $\frac{3}{2}\pi$ eller endnu nemmere som $- \frac{\pi}{2}\pi$. Her anvendes sidstnævnte repræsentation, da det giver symmetri i identiteterne, og hvem kan ikke godt lide symmetrier. De nævnte identiteter kan være meget anvendelige i f.eks. opgave 3, som findes bagerst i dette kompendium.
+
+** Multiplikation og division på polær form
+
+Multiplikation og division på polær form er væsentlig nemmere end på komponentform. Produktet mellem de komplekse tal $z_1 =r_1 e^{i \theta_1}$ og $z_2 =r_2 e^{i \theta_2}$ er givet ved
+
+\begin{align}
+	z_1 \cdot z_2 &= r_1 e^{i \theta_1} \cdot r_2 e^{i \theta_2} \nonumber \\
+		          &= r_1 \cdot r_2 \cdot e^{i\left(\theta_1 + \theta_2\right)} \,.
+\end{align}
+
+Af denne ligning ses det, at $|z_1 \cdot z_2| = |z_1| \cdot |z_2|$ og $arg(z_1 \cdot z_2) = arg(z_1) + arg(z_2)$ begge er opfyldt. Et eksempel på multiplikation af to komplekse tal på (polær form) kan ses på figur [[polaer_multi]].
+
+#+caption: Produktet af to komplekse tal. I dette tilfælde er både $r_1$ og $r_2$ større end 1.
+#+name: polaer_multi
+[[./img/polaer_multi.png]]
+
+Division er lige så simpelt i polær form. Kvotienten mellem $z_1$ og $z_2$ er givet ved
+
+\begin{equation}
+	\frac{z_1}{z_2} = \frac{r_1 \cdot e^{i\theta_1}}{r_2 \cdot e^{i\theta_2}} = \frac{r_1}{r_2} \cdot e^{i (\theta_1 - \theta_2)} \,.
+\end{equation}
+
+Sammenhængene $\left\lvert \frac{z_1}{z_2} \right\rvert = \frac{|z_1|}{|z_2|}$ og $arg\left(\frac{z_1}{z_2}\right) =arg(z_1)-arg(z_2)$ ses igen at være opfyldt.
+
+Divisionen mellem to komplekse tal kan ses på figur [[polaer_divi]].
+
+#+caption: Division af to komplekse tal, hvor $r_1$ og $r_2$ begge igen er større end 1.
+#+name: polaer_divi
+[[./img/polaer_divi.png]]
+
+* de Moivres formel
+
+De Moivres formel er en meget vigtig formel. Den knytter komplekse tal sammen med trigonometrien. Den eftervises let ved at sammensætte potenssammenhængen
+
+$$\left(e^{i\theta}\right)^n = e^{i n \theta}$$
+
+med Eulers ligning ([[euler]])
+
+$$e^{i\theta} = \cos(\theta) + i \sin(\theta)$$
+
+til 
+
+\begin{align}
+\left(\cos(\theta) + i \sin(\theta)\right)^n &= \cos(n\theta) + i \sin(n\theta)\,,  
+\end{align}
+
+hvor identiteten
+
+$$e^{i n \theta}=\cos(n\theta) + i \sin(n\theta)$$ 
+
+følger af samme Taylor-udvikling som i ligning ([[taylor]]).
+
+De Moivres formel gælder for alle $n$ uanset om $n$ er et reelt, imaginært eller komplekst tal. 
+
+Der er mange anvendelser af de Moivres formel, særligt inden for beregninger med komplekse tal. De følgende 3 afsnit vil vise brugen af de Moivres formel til bevis af trigonometriske identiteter, bestemmelse af enhedsrødder og løsning af polynomiske ligninger med komplekse rødder.
+
+** Trigonometriske identiteter
+
+Den bedste måde, at vise brugen af de Moivres formel til at finde trigonometriske identiteter, illustreres bedst med et eksempel.
+
+*** /Eksempel/ 
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+/Udtryk $\cos (3 \theta)$ og $\sin (3 \theta )$ ved hjælp af potenser af $\cos(\theta)$ og $\sin(\theta)$./
+
+de Moivres formel benyttes
+
+\begin{align}
+    \cos (3 \theta) + i \sin(3 \theta) &= \left( \cos(\theta) + i \sin(\theta) \right)^3 \nonumber\\
+                    &= \left( \cos^3(\theta) - 3 \cos(\theta)\cdot \sin^2(\theta) \right) + i\left( 3 \sin(\theta) \cdot \cos^2(\theta) -\sin^3(\theta) \right)\,.
+\end{align}
+
+De reelle og imaginære dele på hver side af lighedstegnet sættes lig hinanden hver for sig
+
+#+name: cos3
+\begin{align}
+    \cos(3 \theta) &= \cos^3(\theta) - 3 \cos(\theta) \cdot \sin^2(\theta) \nonumber\\
+                   &= \cos(\theta) \left( \cos^2(\theta) -3 \sin^2(\theta)\right)
+\end{align}
+
+Parentesen i ligning ([[cos3]]) kan reduceres ved hjælp af trigonometriens grundrelation
+
+\begin{align*}
+    \cos^2(\theta) + \sin^2(\theta) &= 1 \to \\
+    \cos^2(\theta) - 1 &= -\sin^2(\theta) \to \\
+    3\cos^2(\theta) - 3 &= -3\sin^2(\theta)\,.
+\end{align*}
+
+Det sidste udtryk indsættes i ligning ([[cos3]]).
+
+\begin{align}
+    \cos(3 \theta) &= \cos(\theta) \left( \cos^2(\theta) +3 \cos^2(\theta) -3 \right) \to \nonumber \\
+    \cos(3 \theta) &= \cos(\theta) \left( 4 \cos^2(\theta) -3 \right) \to \nonumber \\
+    \cos(3 \theta) &= 4 \cos^3(\theta) -3\cos(\theta) 
+\end{align}
+
+På tilsvarende vis kan $\sin(3\theta)$ omskrives
+
+\begin{align}
+    \sin(3\theta) &= 3 \sin(\theta) \cdot \cos^2(\theta) -\sin^3(\theta) \to \nonumber \\
+    \sin(3\theta) &= 3\sin(\theta) - 4\sin^3(\theta) \,. \quad \triangle
+\end{align}
+
+Denne metode kan bruges til at finde potensudtryk for $\sin(n\theta)$ og $\cos(n\theta)$ for vilkårlige positive heltalsværdier for $n$.
+
+Den omvendte proces benytter sig af følgende egenskaber for $z=e^{i\theta}$
+
+\begin{align}
+    z^n + \frac{1}{z^n} &= 2 \cos (n \theta) \label{cosn}\\
+    z^n - \frac{1}{z^n} &= 2i \sin (n \theta)\label{sinn} 
+\end{align}
+
+Disse egenskaber fremkommer på simpel vis ved brug af de Moivres formel
+
+\begin{align*}
+    z^n + \frac{1}{z^n} &=(\cos(\theta)+i \sin(\theta))^n+(\cos(\theta)+i \sin(\theta))^{-n} \to \\
+    z^n + \frac{1}{z^n} &=\cos(n\theta)+i \sin(n\theta)+\cos(-n\theta)+i \sin(-n\theta) 
+\end{align*}
+
+Herfra udnyttes det at $\cos(-n\theta) = \cos(n\theta)$ og $\sin(-n\theta)=-\sin(n\theta)$,
+
+\begin{align}
+    z^n + \frac{1}{z^n} &=\cos(n\theta)+i \sin(n\theta)+\cos(n\theta)-i \sin(n\theta) \to \nonumber \\
+    z^n + \frac{1}{z^n} &= 2\cos(n\theta)\nonumber\\
+    e^{i n \theta} + e^{-i n \theta} &= 2\cos(n\theta).
+\end{align}
+
+Udledningen for udtrykket med sinus er som følger
+
+\begin{align}
+    z^n - \frac{1}{z^n} &=(\cos(\theta)+i \sin(\theta))^n-(\cos(\theta)+i \sin(\theta))^{-n} \to \nonumber\\
+    z^n - \frac{1}{z^n} &=\cos(n\theta)+i \sin(n\theta)-\cos(-n\theta)-i \sin(-n\theta) \to \nonumber\\
+    z^n - \frac{1}{z^n} &=\cos(n\theta)+i \sin(n\theta)-\cos(n\theta)+i \sin(n\theta) \to \nonumber\\
+    z^n - \frac{1}{z^n} &= 2i \sin(n\theta) \nonumber\\
+    e^{i n \theta} - e^{-i n \theta} &= 2i \sin(n\theta)\,. 
+\end{align}
+
+I det særlige tilfælde, hvor $n=1$, gælder
+
+\begin{align}
+    z + \frac{1}{z} &= e^{i\theta} + e^{-i\theta} = 2 \cos(\theta) \,, \label{cos2}\\
+    z - \frac{1}{z} &= e^{i\theta} - e^{-i\theta} = 2 i \sin(\theta) \,. 
+\end{align}
+
+*** /Eksempel/ 
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+/Omskriv $\cos^3(\theta)$ udtrykt ved $\cos(3 \theta)$ og $\cos(\theta)$./
+
+Benytter ligning \eqref{cos2}
+
+\begin{align*}
+    \cos^3(\theta) &= \left(\frac{z+\frac{1}{z}}{2}\right)^3 \\
+    \cos^3(\theta) &= \frac{1}{2^3} \left(z+\frac{1}{z}\right)^3 \\
+    \cos^3(\theta) &= \frac{1}{8} \left(z^3 + 3z + \frac{3}{z}+\frac{1}{z^3}\right) \\
+    \cos^3(\theta) &= \frac{1}{8} \left(z^3 + \frac{1}{z^3}\right) +\frac{3}{8} \left(z + \frac{1}{z}\right)\,.
+\end{align*}
+
+Den sidste ligning kan omskrives ved hjælp af ligningerne \eqref{cosn} og \eqref{cos2},
+
+\begin{align*}
+    \cos^3 (\theta) &= \frac{1}{8}\left(2\cos(3\theta)\right) + \frac{3}{8}\left(2\cos(\theta)\right) \\
+    \cos^3 (\theta) &= \frac{1}{4}\cos(3\theta) + \frac{3}{4}\cos(\theta)\,. \quad \triangle
+\end{align*}
+
+Dette resultat viser sig, at være en simpel omskrivning af ligningen fra det forrige eksempel. I tilfælde, hvor der bruges større værdier for $n$, er det generelt bedst at benytte denne direkte metode.
+
+
+** Bestemmelse af enhedsrødder
+
+Ligningen $z^2=1$ har de velkendte løsninger $z=\pm1$. Med indførelsen af komplekse tal er det nu muligt at løse den generelle ligning 
+
+$$z^n = 1\,.$$ 
+
+Algebraens fundamentalsætning siger stadig, at ligningen skal have $n$ løsninger. For at kunne fortsætte omskrives ligningen til
+
+$$z^n = e^{2ik\pi} \,,$$
+
+hvor $k$ er et heltal. Nu uddrages den n'te rod på hver side af lighedstegnet
+
+$$\sqrt[n]{z^{n}} = \sqrt[n]{e^{2 i k \pi}}= e^{\frac{2 i k \pi}{n}}\,,$$
+
+således at
+
+$$z=e^{\frac{2 i k \pi}{n}}\,.$$
+
+Herved ses det, at løsningerne til $z^n =1$ er givet ved
+
+$$z_{1,2,\dots,n} = 1, e^{\frac{2 i \pi}{n}},\dots , e^{\frac{2 i (n-1)}{n}} \,,$$
+
+svarende til værdier for $k$ givet ved $k=0,1,2,\dots,n-1$. Større heltalsværdier for $k$ giver ingen nye resultater, da rødderne, som allerede er udregnet, gentages cyklisk for $k=n,n+1,n+2, \text{etc}$.
+
+*** /Eksempel/
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+/Bestem rødderne til ligningen $z^3=1$./
+
+Benytter den føromtalte metode
+
+$$z = e^{\frac{2 i k \pi}{3}} \,.$$
+
+Der er derfor tre rødder
+
+\begin{align*}
+    z_1 &= e^{\frac{2 i \pi \cdot 0}{3}} = e^{0i} = 1 & &\text{ for } k=0\\ 
+    z_2 &= e^{\frac{2 i \pi \cdot 1}{3}} = e^{\frac{2 i \pi}{3}} & &\text{ for } k=1\\ 
+    z_3 &= e^{\frac{2 i \pi \cdot 2}{3}} = e^{\frac{4 i \pi}{3}} & &\text{ for } k=2 
+\end{align*}
+
+Ved indsættelse af $k=3$ for at beregne $z_4$ fås:
+
+$$z_4 = e^{\frac{2 i \pi \cdot 3}{3}} = e^{\frac{6 i \pi}{3}} = e^{2 i \pi} = 1 =z_1 \,.$$
+
+Dette viser, at der kun er 3 adskillelige løsninger. Ganske som forventet. $\triangle$
+
+Da det gælder at $\left\lvert z^3\right\rvert = |z|^3$, er det ikke overraskende, at alle enhedsrødderne har modulus på 1, således at de alle ligger på en cirkel med radius 1 i Argand-diagrammet. De tre enhedsrødder fra eksemplet kan ses på figur [[enhedsroedder]].
+
+#+caption: De tre enhedsrødder, som er løsningerne til $z^3=1$, indtegnet i et Argand-diagram.
+#+name: enhedsroedder
+[[./img/enhedsroedder.png]]
+
+Som en sidste bemærkning om enhedsrødder kan det nævnes, at de tre kubiske enhedsrødder ofte skrives som henholdsvis $1$, $\omega$ og $\omega^2$. Egenskaberne $\omega^3=1$ og $1+\omega+\omega^2 =0$ er simple at bevise.
+
+** Løsning af polynomiske ligninger
+
+En tredje anvendelsesmulighed for de Moivres formel er løsning af polynomiske ligninger. Strategien er i første omgang at løse de komplekse polynomiske ligninger for $z$, som hvis der skulle findes rødder for en reel polynomisk ligning. Efterfølgende kan de komplekse rødder bestemmes.
+
+*** /Eksempel/ 
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+/Løs ligningen $z^6-z^5+4z^4-6z^3+2z^2-8z+8=0$./
+
+I første omgang faktoriseres ligningen til
+
+$$\left(z^3-2\right) \left(z^2+4\right) \left(z-1\right) =0 \,.$$
+
+Af denne ligning kan det ses, at $z^3=2$, $z^2=-4$ og $z=1$.
+
+$z^2=-4$ kan løses simpelt
+
+\begin{align*}
+    z^2 &= -4 \to \\
+    z &= \pm \sqrt{-4} \\
+    z &= \pm \sqrt{-1 \cdot 4} \\
+    z &= \pm \sqrt{-1} \cdot \sqrt{4} \\
+    z &= \pm i \cdot 2
+\end{align*}
+
+$z^3 =2$ kan løses på tilsvarende måde, som for bestemmelse af enhedsrødder
+
+\begin{align*}
+    z^3 &=2 =2 \cdot e^{2 i k \pi} \, ,
+\end{align*}
+
+hvor $k$ er et vilkårligt heltal. Nu uddrages den 3. rod
+
+\begin{align*}
+    z = \left(2\right)^{\frac{1}{3}} \cdot e^{\frac{2 i k \pi}{3}} \,.
+\end{align*}
+
+Fra forrige afsnit kendes allerede metoden til at finde disse løsninger på nær den faktor $2^\frac{1}{3}$, som står foran. Det giver da
+
+\begin{align*}
+    z_1 &= 2^{\frac{1}{3}} \cdot 1 \quad &\text{ for } k&=0 \\
+    z_2 &= 2^{\frac{1}{3}} \cdot e^{\frac{2 i \pi}{3}} \quad &\text{ for } k&=1\\
+    z_3 &= 2^{\frac{1}{3}} \cdot e^{-\frac{2 i \pi}{3}} \quad &\text{ for } k&=-1
+\end{align*}
+
+For at omskrive $z_2$ og $z_3$ til rektangulær form (komponentform, $z=x+iy$) benyttes at $x=\cos(\theta)$ og $y=\sin(\theta)$,
+
+\begin{align*}
+    x_2 &= \cos\left(\frac{2 \pi}{3}\right) = - \frac{1}{2} \\
+    y_2 &= \sin\left(\frac{2 \pi}{3}\right) = \frac{\sqrt{3}}{2} \\
+    x_3 &= \cos\left(-\frac{2 \pi}{3}\right) = - \frac{1}{2} \\
+    y_3 &= \sin\left(-\frac{2 \pi}{3}\right) = - \frac{\sqrt{3}}{2} \,.
+\end{align*}
+
+$z_2$ og $z_3$ kan da skrives som
+
+\begin{align*}
+    z_2 &= 2^{\frac{1}{3}} \left( -\frac{1}{2} + \frac{\sqrt{3}}{2} i \right) \\
+    z_3 &= 2^{\frac{1}{3}} \left( -\frac{1}{2} - \frac{\sqrt{3}}{2} i \right) 
+\end{align*}
+
+Alt i alt er der da 6 løsninger til ligningen
+
+\begin{align*}
+    z_1 &= 2^{\frac{1}{3}} \\
+    z_2 &= 2^{\frac{1}{3}} \left( -\frac{1}{2} + \frac{\sqrt{3}}{2} i \right) \\
+    z_3 &= 2^{\frac{1}{3}} \left( -\frac{1}{2} - \frac{\sqrt{3}}{2} i \right) \\
+    z_4 &= + 2 i \\
+    z_5 &= - 2 i \\
+    z_6 &= 1 \,.
+\end{align*}
+
+Som forventet kan det ses, at der er lige så mange løsninger, som den højeste potens i ligningen. I dette tilfælde altså 6. $\triangle$
+
+Et brugbart resultat er, at rødderne i et polynomium med reelle koefficienter optræder i konjugerede par. Dette betyder, at hvis $z_1$ er en rod, så er $z^*_1$ også en løsning. Dette kan bevises på følgende måde. 
+
+Tag udgangspunkt i den polynomiske ligning med reelle rødder $a_0, a_1,\dots,a_n$, hvor $z$ er en rod
+
+$$a_n z^n + a_{n-1} z^{n-1} + \dots + a_1 z +a_0 =0\,.$$
+
+Nu kompleks konjugeres ligningen
+
+$$a_n^* (z^*)^n + a^*_{n-1} (z^*)^{n-1} + \dots + a^*_1 z^* +a^*_0 =0\,.$$
+
+Da koefficienterne er reelle er $a_i = a_i^*$ for alle $i$ fra $0$ til $n$. Dermed er forrige ligning lig denne
+
+$$a_n (z^*)^n + a_{n-1} (z^*)^{n-1} + \dots + a_1 z^* +a_0 =0\,.$$
+
+Af dette kan det ses, at $z^*$ også er en rod til den oprindelige polynomiske ligning.
+
+* Komplekse logaritmer og eksponenter
+
+Konceptet med en kompleks eksponentialfunktion er allerede blevet introduceret i et tidligere afsnit, hvor det var antaget, at definitionen for eksponentialfunktionen som en Taylorudvikling holdt for både reelle og komplekse tal. På tilsvarende vis kan den komplekse logaritme defineres, og der kan anvendes komplekse eksponenter.
+
+Lad den naturlige logaritme til et komplekst tal $z$ være givet ved $w=Ln (z)$, hvor notationen $Ln$ vil blive forklaret senere. $w$ skal opfylde
+
+$$z = e^w\,.$$
+
+Ved at benytte ligning ([[ee]]) ses det, at
+
+$$z_1\cdot z_2 = e^{w_1} \cdot e^{w_2} = e^{w_1 + w_2}\,,$$
+
+Logaritmen på begge sider af lighedstegnet uddrages,
+
+#+name: Ln
+\begin{align}
+Ln (z_1 \cdot z_2 ) = w_1 + w_2 = Ln (z_1) + Ln (z_2)\,,
+\end{align}
+
+hvilket viser, at den velkendte regel for logaritmen af produkter også gælder for komplekse tal. 
+
+Ligning ([[Ln]]) bruges til yderligere undersøgelse af egenskaberne for $Ln (z)$. Det er allerede blevet nævnt, at argumentet af et komplekst tal har flere værdier, altså $arg(z) = \theta + 2 n \pi$, hvor $n$ er et heltal. Et komplekst tal på polær form skal da i princippet skrives som
+
+$$z= r \cdot e^{i(\theta + 2 n \pi)}\,.$$
+
+Uddragelse af logaritmen på begge sider af lighedstegnet og brug af ligning ([[Ln]]) giver da
+
+#+name: Ln2
+\begin{align}
+    Ln (z) = Ln \left(r \cdot e^{i(\theta + 2 n \pi)} \right) = ln(r) + i(\theta + 2 n \pi)\,, 
+\end{align}
+
+hvor $ln(r)$ er den almindelige naturlige logaritme for det reelle positive tal $r$, og skrives derfor normalt. Fra ligning ([[Ln2]]) ses det, at $Ln(z)$ i sig selv har flere værdier. For at undgå flertydighed i værdien, indføres en anden funktion $ln(z)$, kaldet den *principielle værdi* af $Ln(z)$. Denne fås ved at begrænse argumentet af $z$ til at ligge i intervallet $-\pi < \theta \leq \pi$.
+
+*** /Eksempel/ 
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+/Beregn $Ln(-i)$./
+
+$-i$ omskrives til en kompleks eksponent, $-i = e^{i \left(-\frac{\pi}{2} + 2 n \pi\right)}$.
+
+$$Ln(-i) = Ln \left(e^{i \left(-\frac{\pi}{2} + 2 n \pi\right)}\right) = i\left(-\frac{\pi}{2} + 2 n \pi\right)\,,$$
+
+hvor $n$ er et heltal. Af dette ses at $Ln(-i) =-\frac{i \pi}{2}\, , \frac{3 i \pi}{2} \, , \dots$.
+Den principielle værdi til $Ln(-i)$ er da $ln(-i) = -\frac{i \pi}{2}$. $\triangle$
+
+
+Hvis både $z$ og $t$ er komplekse tal, er $t$ opløftet i $z$ defineret som
+
+#+name: tz
+\begin{equation}
+    t^z = e^{z \cdot Ln(t)}\,.
+\end{equation}
+
+Da $Ln(z)$ i sig selv har flere værdier, så har denne definition det også.
+
+*** /Eksempel/ 
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+/Reducer udtrykket $z=i^{-2i}$./
+
+Først uddrages logaritmen på begge sider af lighedstegnet.
+
+$$Ln(z) = Ln\left(i^{-2i}\right) = Ln \left(e^{-2i \cdot Ln(i)}\right) = -2i \cdot Ln(i)\,.$$
+
+Den modsatte proces giver
+
+$$e^{Ln(z)} = z = e^{-2i \cdot Ln(i)} \,.$$
+
+$i$ kan skrives som $i=e^{i \left( \frac{\pi}{2} + 2 n \pi\right)}$, hvor $n$ er et heltal, og derfor kan $Ln(i)$ skrives som
+
+$$Ln(i) = Ln \left(e^{i\left(\frac{\pi}{2} + 2 n \pi\right)}\right) = i \left(\frac{\pi}{2} + 2 n \pi\right).$$
+
+$z$ kan nu reduceres til
+
+$$z = i^{-2 i} = e^{- 2 i \cdot i \left( \frac{\pi}{2} + 2 n \pi \right)} = e^{2\left( \frac{\pi}{2} + 2 n \pi \right)} = e^{\pi + 4 n \pi}\,,  $$ 
+
+hvilket i sig selv er interessant, da det er en ren reel størrelse fremfor en kompleks. $\triangle$
+
+* Anvendelse i differential- og integralregning
+
+Differentiation af trigonometriske funktioner kan i visse tilfælde gøres simplere ved at anvende den polære repræsentation af komplekse tal sammen med de Moivres formel.
+
+*** /Eksempel/ 
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+/Bestem $\frac{d}{d x} \left( e^{3x} \cdot \cos(4x) \right)$./
+
+Udtrykket kan differentieres direkte ved hjælp af produktreglen samt kædereglen(reglen for sammensatte funktioner), hvilket dog kan gøres simplere med udnyttelse af komplekse tal. I første omgang betragtes det komplekse tal
+
+$$z= e^{3x} \cdot \left(\cos(4x)+ i \sin(4x)\right) = e^{3x} \cdot e^{4ix} = e^{(3+i4)\cdot x} \,,$$
+
+hvor den trigonometriske funktion er blevet omskrevet til en kompleks eksponentialfunktion. Den reelle del af dette udtryk svarer til det oprindelige udtryk. Nu er det simplere at udføre differentiationen
+
+\begin{align*}
+    \frac{d z}{d x} &= (3+i4) e^{(3+i4)\cdot x} \\
+                    &= (3+i4) e^{3x}(\cos(4x) + i \sin(4x))\\
+                    &= 3 e^{3x} \cos(4x) -4 e^{3x} \sin(4x) +i 3 e^{3x} \sin(4x) + i 4 e^{3x} \cos(4x)\,,
+\end{align*}
+
+hvor de Moivre formel igen er brugt til at skrive det komplekse udtryk op på komponentform (rektangulær form). Ved at sætte lighedstegn mellem henholdsvis de reelle og imaginære dele fås, at 
+
+\begin{align*}
+\frac{d}{d x} \left( e^{3x} \cos(4x)\right) = e^{3x} \left(3 \cos(4x) -4 \sin(4x)\right)\\
+\frac{d}{d x} \left( e^{3x} \sin(4x)\right) = e^{3x} \left(4 \cos(4x) +3 \sin(4x)\right)
+\end{align*}
+
+Som det kan ses, er differentiationen gjort simplere og i tilgift fås det sidste differentiale. $\triangle$
+
+Komplekse tal kan også udnyttes på nogenlunde tilsvarende vis ved integration af trigonometriske funktioner og eksponentialfunktioner.
+
+*** /Eksempel/ 
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+/Udfør integralet $I=\int e^{ax} \cdot \cos(bx) \,dx$./
+
+Integranden kan betragtes som den reelle del af det komplekse tal
+
+$$e^{ax} \left(\cos(bx) + i \sin(bx)\right) =e^{ax} e^{ibx} = e^{(a+ib)x}\,$$
+
+hvor de Moivres formel er benyttet til at omskrive de trigonometriske funktioner til en kompleks eksponentialfunktion. Integrationen kan nu udføres
+
+\begin{align*}
+    \int e^{(a+ib)x} \,dx &= \frac{e^{(a+ib)x}}{a+ib} + c \\
+        &= \frac{(a-ib)e^{(a+ib)x}}{(a-ib)(a+ib)} + c\\
+        &= \frac{e^{ax}}{a^2+b^2} \left(a e^{ibx} - i b e^{ibx} \right) + c\,.
+\end{align*}
+
+Integrationskonstanten er generelt et komplekst tal ( $c \in \mathbb{C}$ ) og kan skrives som $c=c_1 + i c_2$, hvor $c_1, c_2 \in \mathbb{R}$. Dette, sammen med anvendelsen af de Moivres formel, giver
+
+\begin{align*}
+    \int e^{(a+ib)x} \,dx &= \frac{e^{ax}}{a^2+b^2} \left(a e^{ibx} - i b e^{ibx} \right) + c \to\\
+     \int e^{(a+ib)x} \,dx &= \frac{e^{ax}}{a^2+b^2} \left(a \left(\cos(bx) + i \sin(bx)\right) - i b \left(\cos(bx) + i\sin(bx)\right) \right) + c_1 + i c_2 \\
+     \int e^{(a+ib)x} \,dx &= \frac{e^{ax}}{a^2+b^2} \left(a \cos(bx) + b \sin(bx) + i a \sin(bx) - i b \cos(bx)  \right) + c_1 + i c_2 
+ \end{align*}
+
+ Ved at sætte de reelle og imaginære dele lig hinanden, hver for sig, fås
+
+\begin{align*}
+    \int e^{ax} \cdot \cos(bx) \,dx &= \frac{e^{ax}}{a^2+b^2} \left( a \cos(bx) + b \sin(bx)\right) + c_1 \quad \text{ Den reelle del.} \\
+    \int e^{ax} \cdot \sin(bx) \,dx &= \frac{e^{ax}}{a^2+b^2} \left( a \sin(bx) - b \cos(bx)\right) + c_2 \quad \text{ Den imaginære del.}
+\end{align*}
+
+\hfill $\triangle$
+
+#+begin_export latex
+\newpage
+#+end_export
+                                                  
+* Opgaver
+** Opgave 1
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+Der er givet følgende fire komplekse tal
+$$z=5+2i \quad u = 2+3i \quad v = -1 + 3i \quad 1+i$$
+
+Udregn og reducér i hånden
+1. $z+u$
+2. $u-v$
+3. $u \cdot v$
+4. $z \cdot u - v$
+5. $w^2$
+** Opgave xx
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+Udfør multiplikation af følgende komplekse tal:
+
+1. $z=1 +2i \quad u=3 + 4i \qquad z\cdot u =?$
+2. $z=5 +6i \quad u=7 + 8i \qquad z\cdot u =?$
+3. $z=-3 +2i \quad u=-1 -i \qquad z\cdot u =?$
+4. $z=4 -2i \quad u=i \qquad z\cdot u =?$
+
+
+** Opgave xx
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+Bestem modulus og argument for hhv. $z$, $u$ og $z \cdot u$.
+
+1. $z=1 +2i \quad u=3 + 4i \qquad z\cdot u =-5 + 10i$
+2. $z=5 +6i \quad u=7 + 8i \qquad z\cdot u =-13 +82i$
+3. $z=-3 +2i \quad u=-1 -i \qquad z\cdot u = 5 +i$
+4. $z=4 -2i \quad u=i \qquad z\cdot u =2 + 4i$
+
+   
+** Opgave xx
+Udregn og reducér følgende brøker i hånden, så resultatet kommer til at stå på formen $z=x+yi$.
+
+\begin{align*}
+a &=\frac{-9+2i}{1+2i} \\
+b &=\frac{1+i}{1-i} \\
+c &= \frac{(1-i)\cdot (1+3i)}{2+i}
+\end{align*}
+   
+** Opgave xx
+Beregn modulus og argument for  tæller, nævner og resultat for brøkerne
+\begin{align*}
+a &=\frac{-9+2i}{1+2i} =-1 + 4i  \\
+b &=\frac{1+i}{1-i} = i  \\
+c &= \frac{(1-i)\cdot (1+3i)}{2+i} = 2
+\end{align*}
+** Opgave 1 
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+Ruten for et orienteringsløb, hvis strækninger er opløst i retlinjede komposanter, kan beskrives med komplekse tal.
+
+Start er placeret i $0+0i$, og der løbes fra Start til 7 poster, $P_1-P_7$. Hvis posterne skal nås i den påtænkte sekvens, skal løberne løbe de komplekse strækninger i den herunder viste rækkefølge. Posternes positioner findes ved addition af de komplekse strækninger.
+
+- Til $P_1$: $300$
+- Til $P_2$: $100 + 100i$
+- Til $P_3$: $200i-400$
+- Til $P_4$: $300 + 200i$
+- Til $P_5$: $-200 - 400i$
+- Til $P_6$: $200i - 300$
+- Til $P_7$: $200 - 400i$
+  
+  
+1. Beregn de komplekse talværdier til de 7 punkter på ruten.
+2. $P_7$, som er Mål for orienteringsløbet, er beliggende i nærheden af Start. Hvor stor er afstanden mellem Mål og Start?
+3. Hvis *nord* er i den reelle akses positive retning, hvilken retning skal du da gå i for at komme fra $P_7$ til $P_1$?
+4. Hvor langt er løbet planlagt til at være, når der regnes med længdeenheden én meter?
+** Opgave 2 
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+Betragt de to komplekse tal $z=3+4i$ og $w=2-i$. Beregn og indtegn følgende sammenhænge i et Argand-diagram
+
+1. $z+w$
+2. $w-z$
+3. $w \cdot z$
+4. $\frac{z}{w}$
+5. $z^* \cdot w + w^*\cdot z$
+6. $w^2$
+
+** Opgave 3 
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+Evaluér eller simplificer følgende udtryk
+
+1. $Re\left(e^{2 i z}\right)$
+2. $\left(-1 + \sqrt{3} \cdot i\right)^{\frac{1}{2}}$
+3. $\left \lvert e^{\left(i^\frac{1}{2}\right)}\right\rvert$
+4. $e^{i^3}$
+5. $Im\left(2^{i+3}\right)$
+6. $z=1^i$
+7. $z=i^i$
+** Opgave 4
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+Ifølge algebraens fundamentalsætning har ethvert polynomium af n'te grad n rødder. I de følgende opgaver ved I da, hvor mange rødder til hvert polynomium, I skal bestemme. I vil blive øvet i forskellige løsningsstrategier i de forskellige opgaver.
+
+1. $z^3+z^2-2z =0$
+2. $z^3-2z^2+2z =0$
+3. $z^4 =16$
+4. $z^3+8=0$
+5. $z^3=27i$
+** Opgave 5 
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+Skitsér de dele af Argand-diagrammet hvor følgende udsagn gælder
+
+1. $|z| = 2$
+2. $|z| < 1$
+3. $1<|z|<2$
+
+** Opgave 6 
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+1. Benyt de Moivres formel med $n=4$ til at bevise at
+
+$$\cos(4 \theta) = 8\cos^4(\theta) - 8 \cos^2(\theta) +1$$
+
+2. [@2] og udled at
+
+$$\cos\left(\frac{\pi}{8}\right) = \left(\frac{2 + \sqrt{2}}{4}\right)^{\frac{1}{2}}\,.$$
+
+** Opgave 7 
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+1. Udtryk $\sin^4(\theta)$ kun ved hjælp af trigonometriske funktioner med multiplum af vinkler (læs $\sin(n\theta)$ eller $\cos(n\theta)$).
+
+2. Eftervis at den gennemsnitslige værdi over en periode er $\frac{3}{8}$.
+
+
+#+begin_export latex
+\newpage
+#+end_export
+
+* Hints og facitliste 
+
+** Opgave 1
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+1. Positionen af de 7 punkter
+   \begin{align*}
+   P_1 &= 300 \\
+   P_2 &= 400 + 100i \\
+   P_3 &= 300i \\
+   P_4 &= 300 + 500i \\
+   P_5 &= 100 + 100i \\
+   P_6 &= -200 + 300i \\
+   P_7 &= -100i
+   \end{align*}
+2. $\left| P_7 P_0 \right| = 100$
+3. Man skal gå i en retning af $18.43^{\circ}=0.32\,rad$ i positiv omløbsretning.
+4. Løbets samlede længde er:
+   \begin{align*}
+   \left| P_0 P_1 \right| &= 300 \\
+   \left| P_1 P_2 \right| &= 141.42 \\
+   \left| P_2 P_3 \right| &= 447.21 \\
+   \left| P_3 P_4 \right| &= 360.56 \\
+   \left| P_4 P_5 \right| &= 447.21 \\
+   \left| P_5 P_6 \right| &= 360.56 \\ 
+   \left| P_6 P_7 \right| &= 447.21 \\
+   \text{I alt} &= 2504.17 
+   \end{align*}
+
+** Opgave 2 
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+1. $5+3i$
+2. $-1-5i$
+3. $10+5i$
+4. $\frac{2}{5} +\frac{11}{5} i$
+5. $4$
+6. $3-4i$
+
+   
+** Opgave 3 
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+1. $e^{-2y} \cos(2x)$
+2. $\sqrt{2}\cdot e^{\frac{\pi}{3} i}$ eller $\sqrt{2}\cdot e^{\frac{4 \pi}{3} i}$
+3. $e^{\frac{1}{\sqrt{2}}}$ eller $e^{-\frac{1}{\sqrt{2}}}$
+4. $0.540 - 0.841 i$
+5. $8 \sin\left(\ln(2)\right) =5.11$
+6. $z=1$
+7. $z=e^{-\frac{1}{2} \pi - 2 \pi \cdot n}$
+
+** Opgave 4 
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+1. $z_1=-2$, $z_2=1+\sqrt{3} i$, $z_3 = 1- \sqrt{3}i$
+2. $z_1=2$, $z_2= 2i$ , $z_3 = -2$ , $z_4 =-2i$
+3. $z_1=\frac{3}{2} \left(\sqrt{3} + i\right)$ ,$z_2=\frac{3}{2} \left(-\sqrt{3} + i\right)$ , $z_3 = -3i$ 
+4. $z_1=0$, $z_2=1$ , $z_3=-2$
+5. $z_1=0$, $z_2 =1+i$ , $z_3=1-i$
+
+** Opgave 5 
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+Der er tale om koncentriske cirkler.
+
+** Opgave 6 
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+1. Benyt først de Moivres formel. Benyt senere trigonometriens grundrelation.
+2. Indsæt $\frac{\pi}{8}$ på $\theta$'s plads. Der kommer til at opstå en skjult andengradsligning, som kan løses.
+
+** Opgave 7 
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+1. Svaret er $\sin^4(\theta) = \frac{1}{8} \cos(4 \theta) -\frac{1}{2} \cos(2 \theta) + \frac{3}{8}$.
+    
+    Benyt ligning \eqref{cosn} og \eqref{sinn}.
+
+2. Integrér udtrykket fra 0 til $2\pi$ og divider med $2 \pi$.
+
+
+#+begin_export latex
+\newpage
+#+end_export
+* Geogebra og komplekse tal
+
+Geogebra har følgende funktioner i sin CAS-del, som gælder for komplekse tal:
+
+- $i$ indtastes ved at trykke alt+i.
+- $e$ indtastes ved at trykke alt+e.
+- =konjugerede(x)= angiver den kompleks konjugerede til et kompleks tal.
+- =real(x)= beregner den reelle del af et komplekst tal.
+- =imaginary(x)= beregner den imaginære del af et komplekst tal.
+- =TilKompleks(x)= angiver et komplekst tal på komponentform (rektangulær form , $z=x+iy$).
+- =TilPolær(x)= angiver et komplekst tal som (modulus ; argument).
+- =TilExponentiel(x)= angiver et komplekst tal som $r \cdot e^{i\theta}$.
+- =CBeregn(<ligning>,<variabel>)= angiver komplekse løsninger til ligninger.
+- =CLøsninger(<ligning>,<variabel>)= angiver komplekse løsninger til ligninger.
+
+I geogebra kan komplekse tal plottes på flere forskellige måder. I Inputfeltet kan der for eksempel skrives følgende:
+
+- =1+2i= - angiver det komplekse tal på komponentform(rektangulær form).
+- =(3;4*\pi/3)= - angiver det komplekse tal ud fra modulus og argument. Læg mærke til `;` .
+
+- =2*e^(-i*pi/4)= - angiver det komplekse tal på eksponentiel form.
+
+De tre forskellige komplekse tal kan ses på figur [[ggb]].
+
+#+caption: Tre forskellige måder at angive komplekse tal på i geogebra.
+#+name: ggb
+[[./img/komplekse_tal_ggb.png]]
+

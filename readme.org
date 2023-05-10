@@ -1,0 +1,1 @@
+Dette er en præsentation og et kompendium om komplekse tal. Præsentationen kan findes på [[https://jacobdebel.github.io/komplekse_tal]].

@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8"/>
+<title>Komplekse tal</title>
+<meta name="author" content="Matematik A"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/sky.css" id="theme"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="./img/joke.jpg" data-background-size="400px" data-background-position="50% 90%">
+<h2>Komplekse tal</h2><h3>Supplerende stof</h3><h4>Matematik A</h4><h4>Vibenshus Gymnasium</h4>
+</section>
+
+<section>
+<section id="slide-org084079f" data-background="">
+<h2 id="org084079f">Behovet for komplekse tal</h2>
+<div class="outline-text-2" id="text-org084079f">
+</div>
+</section>
+<section id="slide-orgbd343f9" data-background="">
+<h3 id="orgbd343f9">En alm 2.gradsligning</h3>
+<p>
+Hvad med, at vi lige prøver at løse en 2.gradsligning
+</p>
+
+<p>
+\[z^2 -4 z +5 = 0\]
+</p>
+
+<p class="fragment (appear)">
+Vi gør det lige på tavlen.
+</p>
+
+<p class="fragment (appear)">
+\[z = 2 \pm \frac{\sqrt{-4}}{2}\]
+</p>
+
+</section>
+<section id="slide-org1fab26a" data-background="">
+<h3 id="org1fab26a">Grafen for 2.gradsligningen</h3>
+
+<div id="orgee24393" class="figure">
+<p><img src="./img/fz_small.png" alt="fz_small.png" width="500px" />
+</p>
+</div>
+
+<ul>
+<li class="fragment appear">Der er i hvert fald ingen reelle rødder.</li>
+<li class="fragment appear">Men der er <b>komplekse</b> løsninger!</li>
+
+</ul>
+
+</section>
+<section id="slide-org8208a21" data-background="">
+<h3 id="org8208a21">Komplekse tal</h3>
+<div style="font-size: 60%;">
+<ul>
+<li>Den <i>imaginære enhed</i> \[i = \sqrt{-1}\]</li>
+<li>Et kompleks tal \[z = x + iy\]</li>
+<li>En reel del \[Re(z) = x\]</li>
+<li>En imaginær del \[Im(z) = y\]</li>
+
+</ul>
+
+</section>
+<section id="slide-orgd89f005" data-background="">
+<h3 id="orgd89f005">Tilbage til 2.gradsligningen</h3>
+<p>
+\[z = 2 \pm \frac{\sqrt{-4}}{2}\]
+</p>
+
+<p class="fragment (appear)">
+\[z = 2 \pm \frac{\sqrt{-1}\sqrt{4}}{2}=2 \pm \frac{i\sqrt{4}}{2} = 2 \pm i\]
+</p>
+
+</section>
+<section id="slide-orge029548" data-background="">
+<h3 id="orge029548">Det komplekse talplan (Argand-diagram)</h3>
+
+<div id="org758e36d" class="figure">
+<p><img src="./img/argand.png" alt="argand.png" width="500px" />
+</p>
+</div>
+<ul>
+<li class="fragment appear">Så hvor ligger de to komplekse tal \(z=2 \pm i\)?</li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org9a707b0" data-background="">
+<h2 id="org9a707b0">Aritmetik med komplekse tal</h2>
+
+<div id="orgde59ba0" class="figure">
+<p><img src="./img/complex_numbers.png" alt="complex_numbers.png" width="500px" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgd4ffd89" data-background="">
+<h3 id="orgd4ffd89">Addition og subtraktion</h3>
+<div style="font-size: 60%;">
+<ul>
+<li>Er meget ligetil. Reelle dele for sig og imaginære dele for sig.</li>
+<li>Eksempel: \(z=-2+4i\), \(u=3i\), \(v=5-i\) og \(w= 1+2i\) \[z-u+v- w\]</li>
+
+</ul>
+
+
+</section>
+<section id="slide-org6bc341e" data-background="">
+<h3 id="org6bc341e">Opgave</h3>
+<div style="font-size: 50%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+Ruten for et orienteringsløb, hvis strækninger er opløst i retlinjede komposanter, kan beskrives med komplekse tal.
+</p>
+
+<p>
+Start er placeret i \(0+0i\), og der løbes fra Start til 7 poster, \(P_1-P_7\). Hvis posterne skal nås i den påtænkte sekvens, skal løberne løbe de komplekse strækninger i den herunder viste rækkefølge. Posternes positioner findes ved addition af de komplekse strækninger.
+</p>
+
+<ul>
+<li>Til \(P_1\): \(300\)</li>
+<li>Til \(P_2\): \(100 + 100i\)</li>
+<li>Til \(P_3\): \(200i-400\)</li>
+<li>Til \(P_4\): \(300 + 200i\)</li>
+<li>Til \(P_5\): \(-200 - 400i\)</li>
+<li>Til \(P_6\): \(200i - 300\)</li>
+<li>Til \(P_7\): \(200 - 400i\)</li>
+
+</ul>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+<ol>
+<li>Beregn de komplekse talværdier til de 7 punkter på ruten.</li>
+<li>\(P_7\), som er Mål for orienteringsløbet, er beliggende i nærheden af Start. Hvor stor er afstanden mellem Mål og Start?</li>
+<li>Hvis <b>nord</b> er i den reelle akses positive retning, hvilken retning skal du da gå i for at komme fra \(P_7\) til \(P_1\)?</li>
+<li>Hvor langt er løbet planlagt til at være, når der regnes med længdeenheden én meter?</li>
+
+</ol>
+</div>
+
+
+</section>
+<section id="slide-org1f4f501" data-background="">
+<h3 id="org1f4f501">Multiplikation</h3>
+<div style="font-size: 80%;">
+<ul>
+<li>Man skal bare gøre, som der står, selvom det er lidt bøvlet.</li>
+<li>Eksempel \(z=-2 +4i\) og \(v=5-i\) \[z \cdot v\]</li>
+
+</ul>
+
+<div class="fragment (appear)">
+\begin{align*}
+z \cdot v &= \left( -2 +4i \right) \cdot  \left(5-i\right) \\
+          &= -2 \cdot 5 -2 \cdot (-i) + 4i \cdot 5 +4i \cdot (-i) \\
+          &= -10 + 2i + 20i -4i^2 \\
+          &= -10 + 2i + 20i -4(-1) \\
+          &= -6 + 22i
+\end{align*}
+
+</div>
+
+</section>
+<section id="slide-org193d808" data-background="">
+<h3 id="org193d808">Lidt blandede opgaver</h3>
+<p>
+Der er givet følgende fire komplekse tal
+\[z=5+2i \quad u = 2+3i \quad v = -1 + 3i \quad w=1+i\]
+</p>
+
+<p>
+Udregn og reducér i hånden
+</p>
+<ol>
+<li>\(z+u\)</li>
+<li>\(u-v\)</li>
+<li>\(u \cdot v\)</li>
+<li>\(z \cdot u - v\)</li>
+<li>\(w^2\)</li>
+
+</ol>
+
+</section>
+<section id="slide-orge3c0c4b" data-background="">
+<h3 id="orge3c0c4b">Opgaver kun om multiplikation</h3>
+<p>
+Udfør multiplikation af følgende komplekse tal:
+</p>
+
+<ol>
+<li>\(z=1 +2i \quad u=3 + 4i \qquad z\cdot u =?\)</li>
+<li>\(z=5 +6i \quad u=7 + 8i \qquad z\cdot u =?\)</li>
+<li>\(z=-3 +2i \quad u=-1 -i \qquad z\cdot u =?\)</li>
+<li>\(z=4 -2i \quad u=i \qquad z\cdot u =?\)</li>
+
+</ol>
+
+<ul>
+<li class="fragment appear">Kan I se en umiddelbar sammenhæng?</li>
+
+</ul>
+</section>
+<section id="slide-orgac624b3" data-background="">
+<h3 id="orgac624b3">There must be a better way!</h3>
+
+</section>
+<section id="slide-org47d4def" data-background="">
+<h3 id="org47d4def">Modulus og argument</h3>
+<div style="font-size: 40%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+For det komplekse tal \[z = x + yi\]
+</p>
+
+<p>
+<b>Modulus</b> - Afstanden fra origo til det komplekse tal
+\[\left| z \right| = \sqrt{x^2+y^2} =\sqrt{Re(z)^2+Im(z)^2}\]
+</p>
+
+<p>
+<b>Argument</b> - Vinklen mellem den reelle akse og det komplekse tal
+\[arg(x) = \tan^{-1} \left( \frac{y}{x} \right) = \tan^{-1} \left( \frac{Im(z)}{Re(z)} \right)\]
+<b>OBS</b>: Nogle gange skal man lægge \(\pi\) til eller trække \(\pi\) fra, alt efter i hvilken kvadrant det komplekse tal er beliggende. Hvis man har adgang til <code>atan2</code> eller <code>arctan2</code> eller noget lignende, så brug den funktion.
+</p>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+
+<div id="orged50f31" class="figure">
+<p><img src="./img/modulus_og_argument.png" alt="modulus_og_argument.png" width="600px" />
+</p>
+</div>
+</div>
+
+
+</section>
+<section id="slide-org6f2c541" data-background="">
+<h3 id="org6f2c541">Opgaver kun om multiplikation (igen)</h3>
+<p>
+Bestem modulus og argument for hhv. \(z\), \(u\) og \(z \cdot u\) fra forrige opgave.
+</p>
+
+<ol>
+<li>\(z=1 +2i \quad u=3 + 4i \qquad z\cdot u =-5 + 10i\)</li>
+<li>\(z=5 +6i \quad u=7 + 8i \qquad z\cdot u =-13 +82i\)</li>
+<li>\(z=-3 +2i \quad u=-1 -i \qquad z\cdot u = 5 +i\)</li>
+<li>\(z=4 -2i \quad u=i \qquad z\cdot u =2 + 4i\)</li>
+
+</ol>
+
+
+</section>
+<section id="slide-org2a074e7" data-background="">
+<h3 id="org2a074e7">Svarene er</h3>
+<div style="font-size: 50%;">
+<ol>
+<li><div>
+\begin{align*}
+z &=1 +2i:  & |z|&=2.236 & arg(z)&=1.107 \\
+u &=3 + 4i: & |u|&=5     & arg(u)&=0.927 \\
+z\cdot u &=-5 + 10i: & |z\cdot u| &=11.18 & arg(z \cdot u) &= 2.034
+\end{align*}
+
+</div></li>
+<li><div>
+\begin{align*}
+z &=5 +6i:  & |z|&=7.81 & arg(z)&=0.876 \\
+u &=7 + 8i: & |u|&=10.63     & arg(u)&=0.852 \\
+z\cdot u &=-5 + 10i: & |z\cdot u| &=83.02 & arg(z \cdot u) &=1.728 
+\end{align*}
+
+</div></li>
+<li><div>
+\begin{align*}
+z &=-3 +2i:  & |z|&=3.61 & arg(z)&=2.554 \\
+u &=-1 -i: & |u|&=1.41     & arg(u)&=-2.356 \\
+z\cdot u &=5 + i: & |z\cdot u| &=5.10 & arg(z \cdot u) &=0.197 
+\end{align*}
+
+</div></li>
+<li><div>
+\begin{align*}
+z &=4 -2i:  & |z|&=4.47 & arg(z)&=-0.464 \\
+u &=i: & |u|&=1     & arg(u)&=1.571 \\
+z\cdot u &=2 + 4i: & |z\cdot u| &=4.47 & arg(z \cdot u) &=1.107 
+\end{align*}
+
+</div></li>
+
+</ol>
+
+
+
+<p>
+Kan I nu se en sammenhæng?
+</p>
+
+</section>
+<section id="slide-org8b0c312" data-background="">
+<h3 id="org8b0c312">Hvad så med division?</h3>
+</section>
+<section id="slide-org160594c" data-background="">
+<h3 id="org160594c"><b>Kompleks konjugering</b> to the rescue</h3>
+
+<div id="org8acdc80" class="figure">
+<p><img src="./img/complex_conjugate.png" alt="complex_conjugate.png" width="500px" />
+</p>
+</div>
+</section>
+<section id="slide-orgcae7787" data-background="">
+<h3 id="orgcae7787">Kompleks konjugering</h3>
+<div style="font-size: 60%;">
+<ul>
+<li><p>
+Man ændre bare fortegnet på den imaginære del.
+</p>
+<div>
+\begin{align*}
+z &= x+yi \\
+z^{*} &= x - yi
+\end{align*}
+
+</div></li>
+<li>\(z^{*}\) er den <i>kompleks konjugerede</i> til \(z\).</li>
+<li>Det svarer til at spejle det komplekse tal omkring den reelle akse.</li>
+
+</ul>
+
+
+<div id="org03998ff" class="figure">
+<p><img src="./img/konjugation.png" alt="konjugation.png" width="500px" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgf9f8f4f" data-background="">
+<h3 id="orgf9f8f4f">Eksempler</h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+Den kompleks konjugerede til
+</p>
+
+<p>
+\[z = a-2 -4i + 5i \cdot b \cdot c\]
+</p>
+
+<p>
+er
+</p>
+<div class="fragment (appear)">
+\begin{align*}
+z^{*} &= a-2 + 4i - 5 i \cdot b \cdot c \\
+&= a-2 + i \cdot (4- 5\cdot b \cdot c)
+\end{align*}
+
+</div>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+<p>
+Den kompleks konjugerede til
+</p>
+
+<p>
+\[z=w^{(-2y+4xi)} \text{ for } w=(2x-3i)\]
+</p>
+
+<p>
+er
+</p>
+<div class="fragment (appear)">
+\begin{align*}
+z^{*}=(2x+3i)^{(-2y-4xi)}
+\end{align*}
+
+</div>
+</div>
+
+</section>
+<section id="slide-org632b9ff" data-background="">
+<h3 id="org632b9ff">Regneregler for kompleks konjugering</h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<div>
+\begin{align*}
+    (z_1 \pm z_2)^* &= z_1^* \pm z_2^* \\
+    (z_1 \cdot z_2)^* &= z_1^* \cdot z_2^* \\
+    \left(\frac{z_1}{z_2}\right)^* &= \frac{z_1^*}{z_2^*}
+\end{align*}
+
+</div>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+<div>
+\begin{align*}
+    \left(z^*\right)^* &= z \\
+    z\cdot z^* &= |z|^2 \\
+    z+ z^* &= 2 \cdot Re(z) = 2 x \\
+    z-z^* &= 2i \cdot Im(z) = 2iy \\
+    \frac{z}{z^*} &= \left(\frac{x^2-y^2}{x^2+y^2} \right) + i \left(\frac{2 x y}{x^2+y^2}\right) 
+\end{align*}
+
+</div>
+</div>
+
+<p class="fragment (appear)">
+<b>Opgave:</b> Eftervis selv 3 af reglerne vha. håndskrift.
+</p>
+
+</section>
+<section id="slide-orgd090a20" data-background="">
+<h3 id="orgd090a20">Division på rektangulær form</h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+Division mellem \(z_1= x_1+y_1 i\), \(z_2=x_2+y_2 i\) er kvotienten mellem dem
+</p>
+
+<div>
+\begin{align*}
+    \frac{z_1}{z_2} = \frac{x_1+y_1 i}{x_2+y_2 i}
+\end{align*}
+
+</div>
+
+<ul>
+<li class="fragment appear">Men hvad så her fra?</li>
+
+</ul>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+<ul>
+<li class="fragment appear"><p>
+Find en reel nævner ved at forlænge brøken med den kompleks konjugerede nævner.
+</p>
+<div>
+\begin{align*}
+    \frac{z_1}{z_2} &= \frac{x_1+y_1 i}{x_2+y_2 i} \\
+    \frac{z_1}{z_2} &= \frac{(x_1+y_1 i)\cdot(x_2-y_2 i)}{(x_2+y_2 i)\cdot(x_2-y_2 i)} \\
+    \frac{z_1}{z_2} &= \frac{(x_1 x_2 + y_1 y_2)+i(x_2 y_1 - x_1 y_2)}{x_2^2+y_2^2} \\
+    \frac{z_1}{z_2} &= \frac{x_1 x_2 + y_1 y_2}{x_2^2+y_2^2}+i\left(\frac{x_2 y_1 - x_1 y_2}{x_2^2+y_2^2} \right)
+\end{align*}
+
+</div></li>
+
+</ul>
+</div>
+
+</section>
+<section id="slide-orgff03f55" data-background="">
+<h3 id="orgff03f55">Eksempel</h3>
+<div style="font-size: 60%;">
+<p>
+Lad os reducere
+\[z = \frac{2+3i}{1-5i}\]
+</p>
+
+<ul>
+<li class="fragment appear">\(z = \frac{2+3i}{1-5i} = \frac{2+3i}{1-5i} \cdot \frac{1+5i}{1+5i} = \frac{(2+3i)\cdot (1+5i)}{(1-5i)\cdot (1+5i)}\)</li>
+<li class="fragment appear">\(z = \frac{2\cdot 1+2\cdot 5 i+3i\cdot 1+3i \cdot 5i }{1\cdot 1 + 1 \cdot 5i -5i \cdot 1 -5i \cdot 5i}\)</li>
+<li class="fragment appear">\(z = \frac{2+10 i+3i+3\cdot 5\cdot i^2 }{1 - (5i)^2}\)</li>
+<li class="fragment appear">\(z = \frac{2+10 i+3i+3\cdot 5\cdot i^2 }{1 - (5)^{2}i^2}\)</li>
+<li class="fragment appear">\(z = \frac{2+10 i+3i+3\cdot 5\cdot (-1) }{1 - (5)^{2}\cdot (-1)}\)</li>
+<li class="fragment appear">\(z = \frac{-13 + 13i }{26}\)</li>
+<li class="fragment appear">\(\boxed{z = - \frac{1}{2} + \frac{1}{2}i}\)</li>
+
+</ul>
+
+</section>
+<section id="slide-org1259a7d" data-background="">
+<h3 id="org1259a7d">Opgave</h3>
+<p>
+Udregn og reducér følgende brøker i hånden, så resultatet kommer til at stå på formen \(z=x+yi\).
+</p>
+
+<div>
+\begin{align*}
+a &=\frac{-9+2i}{1+2i} \\
+b &=\frac{1+i}{1-i} \\
+c &= \frac{(1-i)\cdot (1+3i)}{2+i}
+\end{align*}
+
+</div>
+
+</section>
+<section id="slide-orgc819500" data-background="">
+<h3 id="orgc819500">Opgave</h3>
+<p>
+Beregn modulus og argument for  tæller, nævner og resultat for brøkerne
+</p>
+<div>
+\begin{align*}
+a &=\frac{-9+2i}{1+2i} =-1 + 4i  \\
+b &=\frac{1+i}{1-i} = i  \\
+c &= \frac{(1-i)\cdot (1+3i)}{2+i} = 2
+\end{align*}
+
+</div>
+</section>
+<section id="slide-org29614f1" data-background="">
+<h3 id="org29614f1">Svarene er</h3>
+<div style="font-size: 50%;">
+<ul>
+<li><p>
+a:
+</p>
+<div>
+\begin{align*}
+-9 + 2i &: & \text{modulus} &= 9.22 & \text{argument} &= 2.923 \\
+ 1 + 2i &: & \text{modulus} &= 2.24 & \text{argument} &= 1.107 \\
+-1 + 4i &: & \text{modulus} &= 4.12 & \text{argument} &= 1.816 
+\end{align*}
+
+</div></li>
+<li><p>
+b:
+</p>
+<div>
+\begin{align*}
+ 1 + i &: & \text{modulus} &= 1.41  & \text{argument} &= 0.785 \\
+ 1 - i &: & \text{modulus} &= 1.41 & \text{argument} &= -0.785 \\
+i &: & \text{modulus} &= 1 & \text{argument} &=1.571  
+\end{align*}
+
+</div></li>
+<li><p>
+c:
+</p>
+<div>
+\begin{align*}
+(1-i)\cdot (1+3i) &: & \text{modulus} &=4.48  & \text{argument} &=0.464  \\
+ 2+i &: & \text{modulus} &= 2.24 & \text{argument} &= 0.464 \\
+2 &: & \text{modulus} &= 2 & \text{argument} &= 0 
+\end{align*}
+
+</div></li>
+
+</ul>
+</section>
+<section id="slide-orga6e02fe" data-background="">
+<h3 id="orga6e02fe">Division igen</h3>
+<div style="font-size: 60%;"
+<ul>
+<li>Når man dividere to komplekse tal med hinanden skrevet op med modulus og argument, deler man blot de to modulus med hinanden og trækker de to argumenter fra hinanden.</li>
+
+</ul>
+
+<div>
+\begin{align*}
+\left| \frac{z_1}{z_2} \right| &= \frac{|z_1|}{|z_2|} \\
+arg \left(\frac{z_1}{z_2} \right) &= arg(z_1) - arg(z_2)
+\end{align*}
+
+</div>
+</section>
+<section id="slide-orgd9b5cd2" data-background="">
+<h3 id="orgd9b5cd2">Konklusion på aritmetik</h3>
+<div style="font-size: 50%;">
+<p>
+<b>Addition og subtraktion er nemt på rektangulær form</b>
+</p>
+<div>
+\begin{align*}
+z_1 &= x_1 + y_1 i \\
+z_2 &= x_2 + y_2 i \\
+z_1 \pm z_2 &= x_1 \pm x_2 + \left( y_1+\pm y_2 \right) i
+\end{align*}
+
+</div>
+
+<p>
+<b>Multiplikation og division er nemt på polær form (modulus og argument)</b>
+</p>
+
+<div>
+\begin{align*}
+z_1 &: mod(z_1) \,,\, arg(z_1) \\
+z_2 &: mod(z_2) \,,\, arg(z_2) \\
+z_1\cdot z_2 &: mod(z_1\cdot z_2) = mod(z_1) \cdot mod(z_2) \,,\, arg(z_1 \cdot z_2) = arg(z_1) + arg(z_2)\\
+\frac{z_1}{z_2} &: mod \left(\frac{z_1}{z_2}\right) = \frac{mod(z_1)}{mod(z_2)} \,,\, arg \left(\frac{z_1}{ z_2}\right) = arg(z_1) - arg(z_2)
+\end{align*}
+
+</div>
+
+</section>
+<section id="slide-orga520482" data-background="">
+<h3 id="orga520482">Det er modulus og argument er da ret besværligt at skrive op&#x2026;</h3>
+
+</section>
+</section>
+<section>
+<section id="slide-orgd8ed012" data-background="">
+<h2 id="orgd8ed012">Komplekse tal på eksponentiel form</h2>
+<div class="outline-text-2" id="text-orgd8ed012">
+</div>
+</section>
+<section id="slide-org4c076b3" data-background="">
+<h3 id="org4c076b3">Den komplekse eksponentialfunktion</h3>
+<div style="font-size: 60%;">
+<p>
+\[e^z = exp(z) = \sum_{j=0}^{\infty} \frac{z^j}{j!}=1 + z + \frac{z^2}{2!} + \frac{z^3}{3!} + \dots\]
+</p>
+<ul>
+<li class="fragment appear">Nu ved det rene <i>imaginære</i> tal \(z=i \theta\)</li>
+<li class="fragment appear">\(e^z = e^{i \theta} =1+ i\theta + \frac{(i \theta)^2}{2!} + \frac{(i\theta)^3}{3!} + \frac{(i\theta)^4}{4!}+ \frac{(i\theta)^5}{5!}+\cdots\)</li>
+<li class="fragment appear">\(e^z = e^{i \theta} = 1 + i\theta - \frac{\theta^2}{2!} - \frac{i\theta^3}{3!} + \frac{\theta^4}{4!} + \frac{i\theta^5}{5!} +\cdots\)</li>
+<li class="fragment appear">\(e^z = e^{i \theta} = \left(1- \frac{\theta^2}{2!} + \frac{\theta^4}{4!} - \cdots\right) + i \left(\theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!}-\cdots \right)\)</li>
+
+</ul>
+</section>
+<section id="slide-orga3aeb16" data-background="">
+<h3 id="orga3aeb16">Intermezzo - Taylorudvikling</h3>
+<div style="font-size: 40%;">
+<p>
+\[\boxed{P_n(x) =f(x_0) + f'(x_0) \cdot \left( x-x_0 \right) + \frac{f''(x_0)}{2!}\cdot \left( x-x_0 \right)^2 + \frac{f'''(x_0)}{3!} \cdot \left( x-x_0 \right)^3 + \dots + \frac{f^{(n)}(x_0)}{n!}\cdot \left( x -x_0 \right)^n}\]
+</p>
+<ul>
+<li class="fragment appear">For \(\cos(x)\) omkring \(x_0=0\)</li>
+<li class="fragment appear">\(P_4(x) =\cos(0) + (-\sin(0))\cdot (x-0) +\frac{(-\cos(0))}{2!}\cdot (x-0)^2 + \frac{\sin(0)\cdot (x-0)^3}{3!} + \frac{\cos(0)\cdot \left( x-0 \right)^4}{4!} + \dots\)</li>
+<li class="fragment appear">\(P_4(x)=1 + 0\cdot x +\frac{-1}{2!}\cdot x^2 + \frac{0\cdot x^3}{3!} + \frac{1\cdot x^4}{4!} + \dots\)</li>
+<li class="fragment appear">\(\boxed{P_4(x)=1 - \frac{1}{2!}\cdot x^2 + \frac{1}{4!}\cdot x^4 + \dots}\)</li>
+<li class="fragment appear"><b>Nu skal I selv prøve for \(\sin(x)\) omkring \(x_0=0\)</b></li>
+<li class="fragment appear"><p>
+Svaret er:
+</p>
+<div>
+\begin{align*}
+\sin(x) &\approx \sin(0) + \cos(0) \cdot (x-0) + \frac{- \sin(0)}{2!}\cdot \left( x-0 \right)^2 + \frac{- \cos(0)}{3!}\cdot \left( x-0 \right)^3 \\
+&+ \frac{\sin(0)}{4!}\cdot \left( x-0 \right)^4+ \frac{\cos(0)}{5!}\cdot \left( x-0 \right)^5 + \dots \\
+\sin(x) &\approx x - \frac{1}{3!} \cdot x^3 + \frac{1}{5!}\cdot x^5 + \dots
+\end{align*}
+
+</div></li>
+
+</ul>
+</section>
+<section id="slide-orgf95793f" data-background="">
+<h3 id="orgf95793f">Den komplekse eksponentialfunktion igen</h3>
+<div style="font-size: 60%;">
+<p>
+Hvor var vi&#x2026; når ja
+</p>
+<p class="fragment (appear)">
+\[e^z = e^{i \theta} = \left(1- \frac{\theta^2}{2!} + \frac{\theta^4}{4!} - \cdots\right) + i \left(\theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!}-\cdots \right)\]
+</p>
+
+<p class="fragment (appear)">
+Som vi nu kan se er
+</p>
+<p class="fragment (appear)">
+\[e^z = e^{i \theta} = \cos(\theta) + i \cdot \sin(\theta) \]
+</p>
+
+</section>
+<section id="slide-orgf1c5d80" data-background="">
+<h3 id="orgf1c5d80">Eulers ligning</h3>
+<p>
+\[\boxed{e^{i \theta}= \cos(\theta) + i \cdot \sin(\theta)}\]
+</p>
+<ul>
+<li>Yderligere kan det også vises, at</li>
+
+</ul>
+<div>
+\begin{align*}
+e^{i \cdot n \cdot \theta} &= \cos(n\theta) +i \cdot \sin(n \theta) \\
+r \cdot e^{i\theta} &= r \cdot \left( \cos(\theta) + i \cdot \sin(\theta) \right)
+\end{align*}
+
+</div>
+</section>
+<section id="slide-org1178bb6" data-background="">
+<h3 id="org1178bb6">Komplekse tal på eksponentiel form/polær form</h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+Fra Eulers ligning: \(e^{i\theta} = \cos(\theta) + i \cdot \sin(\theta)\)
+og figuren på højre side, er det muligt at beskrive et komplekst tal som:
+</p>
+
+<p>
+\[\boxed{z = r \cdot e^{i\theta}}\]
+hvor \(r\) er det samme som <code>modulus</code> og \(\theta\) er det samme som <code>argumentet</code>.
+</p>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+
+<div id="org3db422c" class="figure">
+<p><img src="./img/euler.png" alt="euler.png" width="400px" />
+</p>
+</div>
+</div>
+
+</section>
+<section id="slide-org767c27a" data-background="">
+<h3 id="org767c27a">Simple identiteter</h3>
+
+<div id="org6d6f479" class="figure">
+<p><img src="./img/e_to_the_pi_times_i.png" alt="e_to_the_pi_times_i.png" width="450px" />
+</p>
+</div>
+</section>
+<section id="slide-org6a95517" data-background="">
+<h4 id="org6a95517">No I ain't</h4>
+<div style="font-size: 60%;">
+<ul>
+<li>Vi skal bare bruge den komplekse talplan og den polære form af komplekse tal.</li>
+
+</ul>
+
+
+<div id="orgd68a0d9" class="figure">
+<p><img src="./img/kompleks_enhedscirkel_identiteter.png" alt="kompleks_enhedscirkel_identiteter.png" width="500px" />
+</p>
+</div>
+<ul>
+<li class="fragment appear">Vi tager den lige stille og roligt på tavlen.</li>
+
+</ul>
+</section>
+<section id="slide-orgc7db09e" data-background="">
+<h3 id="orgc7db09e">Multiplikation og division på eksponential form</h3>
+<div style="font-size: 50%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+Vi har to komplekse tal på polær form
+\[z_1 = r_1 \cdot e^{i \theta_1} \quad ,\quad z_2 = r_2 \cdot e^{i \theta_2}\]
+</p>
+<ul>
+<li class="fragment appear">Lad os bare se, hvad der sker, når vi multiplicere dem</li>
+
+</ul>
+<div class="fragment (appear)">
+\begin{align*}
+z_1 \cdot z_2 &= r_1 \cdot e^{i \theta_1} \cdot r_2 \cdot e^{i \theta_2} = r_1\cdot r_2 \cdot e^{i \theta_1} \cdot e^{i \theta_2}\\
+z_1 \cdot z_2 &= \boxed{r_1 \cdot r_2} \cdot e^{i \boxed{\left( \theta_1 +\theta_2 \right)}}
+\end{align*}
+
+</div>
+<ul>
+<li class="fragment appear">Multiplicér modulerne og læg argumenterne sammen. Helt alm. potensregning.</li>
+
+</ul>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+<p class="fragment (appear)">
+Og hvad division angår&#x2026;
+</p>
+<div class="fragment (appear)">
+\begin{align*}
+\frac{z_1}{z_2} &= \frac{r_1 \cdot e^{i \theta_1}}{r_2 \cdot e^{i \theta_2}} = \frac{r_1}{r_2} \cdot \frac{e^{i \theta_1}}{e^{i \theta_2}}\\
+z_1 \cdot z_2 &= \boxed{\frac{r_1}{r_2}} \cdot e^{i \boxed{\left(\theta_1-\theta_2\right)}}
+\end{align*}
+
+</div>
+<ul>
+<li class="fragment appear">Dividér modulerne og træk argumenterne fra hinanden. Helt alm. potensregning.</li>
+
+</ul>
+</div>
+
+</section>
+<section id="slide-org4b6b366" data-background="">
+<h3 id="org4b6b366">Multiplikation med 1,-1,i og -i</h3>
+<div style="font-size: 50%;">
+<ul>
+<li>Nu skal I undersøge noget.</li>
+
+</ul>
+<ul>
+<li class="fragment appear">Hvad sker der med det komplekse tal \(z=x+iy = r\cdot e^{i\theta}\), hvis man ganger det med hhv. 1,-1, i og -i?</li>
+<li class="fragment appear">Svar:
+<ul>
+<li class="fragment appear">\(1\cdot z\) : Ingenting (identitetsoperation, what a fancy word)</li>
+<li class="fragment appear">\(-1\cdot z\) : z roteres en halv omgang om origo.</li>
+<li class="fragment appear">\(i \cdot z\) : z roteres en kvart omgang om origo i positiv retning.</li>
+<li class="fragment appear">\(-i \cdot z\) : z roteres en kvart omgang om origo i negativ retning.</li>
+
+</ul></li>
+
+</ul>
+
+
+
+<div id="org17f7602" class="figure">
+<p><img src="./img/multiplikation.png" alt="multiplikation.png" width="500px" class="fragment (appear)" />
+</p>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org8012d5f" data-background="">
+<h2 id="org8012d5f">Lidt tilfældig ligningsløsning</h2>
+<div style="font-size: 60%;">
+<p>
+Løs inden for de komplekse tal de følgende ligninger med den ubekendte \(z\). I skal gøre det i hånden.
+</p>
+
+<ol>
+<li>\(3z+5i = 9 -i\)</li>
+<li>\(z^2 +16=0\)</li>
+<li>\(2z+iz = 5\)</li>
+<li>\(z^2+6z+10=0\)</li>
+<li>\(z^2-(3+i)z+2+i=0\) (Lidt tricky&#x2026; eller måske meget)</li>
+
+</ol>
+</section>
+</section>
+<section>
+<section id="slide-orgaeb552f" data-background="">
+<h2 id="orgaeb552f">de Moivres formel</h2>
+<div style="font-size: 60%;">
+<p>
+En simpel, men vigtig formel.
+\[\left( e^{i\theta} \right)^n = e^{i n \theta}\]
+\[\boxed{\left( \cos (\theta) + i \sin(\theta) \right)^n = \cos(n \theta) + i \sin (n \theta)}\]
+</p>
+<ul>
+<li>Venstresiden kommer fra Eulers ligning.</li>
+<li>Højresiden kan findes vha. en tilsvarende Taylorudvikling, som I har set tidligere.</li>
+<li>\(n\) kan være <i>alt</i>, reel, imaginær eller kompleks.</li>
+
+</ul>
+
+<p class="fragment (appear)">
+Anvendelsesmuligheder:
+</p>
+<ul>
+<li class="fragment appear">Bestemmelse af enhedsrødder</li>
+<li class="fragment appear">Løsning af polynomiske ligninger med komplekse rødder</li>
+<li class="fragment appear">Udledning af trigonometriske identiteter.</li>
+
+</ul>
+</section>
+<section id="slide-org72659f7" data-background="">
+<h3 id="org72659f7">Enhedsrødder</h3>
+<div style="font-size: 60%;">
+<ul>
+<li class="fragment appear">Kan I løse ligningen?
+\[z^2 = 1\]</li>
+<li class="fragment appear">Selvfølgelig. Det er bare \[z=\pm 1 \text{ eller } z_1 = 1 \text{ og } z_2 = -1\]</li>
+<li class="fragment appear">2 løsninger, da eksponenten er 2.</li>
+<li class="fragment appear">Hvad så med \[z^3 = 1\] hvor der skal jo være 3 løsninger?</li>
+<li class="fragment appear">Eller endnu værre \[z^n =1\]</li>
+
+</ul>
+
+</section>
+<section id="slide-org32900d5" data-background="">
+<h3 id="org32900d5">de Moivre FTW</h3>
+<div style="font-size: 60%;">
+<p class="fragment (appear)">
+\[z^n = 1\]
+</p>
+<ul>
+<li class="fragment appear">Kan omskrives vha. en af de simple indentiteter
+\[z^n = e^{2 k \pi \cdot i}\]
+hvor \(k\) er et helt tal.</li>
+<li class="fragment appear">Udrag den n'te rod
+\[z = \sqrt[n]{e^{2 k \pi \cdot i}} =\left(e^{2 k \pi \cdot i}\right)^{\frac{1}{n}} = e^{\frac{2 k \pi \cdot i}{n}}\]
+som man kan pga. de Moivres formel.</li>
+<li class="fragment appear">Nu skal man bare indsætte n værdier for k svarende til \(k=0,1,2,\dots,n-1\) , så har man alle løsningerne.</li>
+
+</ul>
+
+</section>
+<section id="slide-orgd0f6f21" data-background="">
+<h3 id="orgd0f6f21">Eksempel</h3>
+<div style="font-size: 60%;">
+<p>
+\[z^5 = 1\]
+</p>
+<div class="column" style="float:left; width: 50%">
+<ul>
+<li class="fragment appear">Omskriver til \[z^5 = e^{2k \pi \cdot i}\]</li>
+<li class="fragment appear">Løser for z \[z = \sqrt[5]{e^{2k \pi \cdot i}} = e^{\frac{2 k \pi \cdot i}{5}}\]</li>
+<li class="fragment appear">Indsætter k-værdierne 0,1,2,3,4 for hver løsning.</li>
+
+</ul>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+<div class="fragment (appear)">
+\begin{align*}
+z_1 &= e^{\frac{2 \cdot 0 \cdot \pi \cdot i}{5}} = 1 \\
+z_2 &= e^{\frac{2 \cdot 1 \cdot \pi \cdot i}{5}} = e^{\frac{2 \pi}{5}\cdot i}\\ 
+z_3 &= e^{\frac{2 \cdot 2 \cdot \pi \cdot i}{5}} = e^{\frac{4 \pi}{5}\cdot i}\\
+z_4 &= e^{\frac{2 \cdot 3 \cdot \pi \cdot i}{5}} = e^{\frac{6 \pi}{5}\cdot i}\\
+z_5 &= e^{\frac{2 \cdot 4 \cdot \pi \cdot i}{5}} = e^{\frac{8 \pi}{5}\cdot i}
+\end{align*}
+
+</div>
+</div>
+</section>
+<section data-background="">
+<div style="font-size: 60%;">
+<p>
+Grafisk ser løsningerne til \(z^5=1\) således ud:
+</p>
+
+
+<div id="org0a16695" class="figure">
+<p><img src="./img/eksempel_1_demoivre.png" alt="eksempel_1_demoivre.png" width="700px" />
+</p>
+</div>
+</section>
+<section id="slide-orgc306a45" data-background="">
+<h3 id="orgc306a45">Et andet eksempel</h3>
+<div style="font-size: 60%;">
+<p>
+Hvad så med
+\[z^3 = i\]
+</p>
+<div class="column" style="float:left; width: 50%">
+<ul>
+<li class="fragment appear">Omskriv \(i\) vha de simple identiter til \[i=e^{\frac{\pi}{2}\left( 4k+1 \right)i}\]</li>
+<li class="fragment appear"><p>
+Brug så de Moivres ligning til at bestemme rødderne
+</p>
+<div>
+\begin{align*}
+z^3 &= e^{\frac{\pi}{2}\left( 4k+1 \right)i} \iff \\
+z &= e^{\frac{\pi}{2\cdot 3}\left( 4k+1 \right)i} \iff \\
+z &= e^{\frac{\pi}{6}\left( 4k+1 \right)i} \iff
+\end{align*}
+
+</div></li>
+
+</ul>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+<ul>
+<li class="fragment appear"><p>
+Nu skal \(k_1=0\), \(k_2=1\) og \(k_3=2\) bare indsættes
+</p>
+<div>
+\begin{align*}
+z_1 &= e^{\frac{\pi}{6}\left( 4\cdot 0+1 \right)i}=e^{\frac{\pi}{6}i} \\
+z_2 &= e^{\frac{\pi}{6}\left( 4\cdot 1+1 \right)i}=e^{\frac{5 \pi}{6}i} \\
+z_3 &= e^{\frac{\pi}{6}\left( 4\cdot 2+1 \right)i}=e^{\frac{3\pi}{2}i} = -i 
+\end{align*}
+
+</div></li>
+
+</ul>
+</div>
+
+</section>
+<section data-background="">
+<div style="font-size: 60%;">
+<p>
+Grafisk ser løsningerne til \(z^3=i\) således ud:
+</p>
+
+
+<div id="org3e08479" class="figure">
+<p><img src="./img/eksempel_2_demoivre.png" alt="eksempel_2_demoivre.png" width="700px" />
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org607a6b0" data-background="">
+<h2 id="org607a6b0">Polynomiers rødder</h2>
+<p>
+Det er nemmest at forstå gennem et eksempel.
+</p>
+</section>
+<section id="slide-org91b3f5f" data-background="">
+<h3 id="org91b3f5f">Eksempel</h3>
+<div style="font-size: 50%;">
+<p>
+Vi skal finde alle rødder i ligningen
+</p>
+
+<p>
+\[z^5+9z^3 -8z^2 -72 =0\]
+</p>
+
+<ul>
+<li class="fragment appear">Vi ved, at der skal være 5 løsninger.</li>
+<li class="fragment appear">Der er ingen generel løsningsmetode til polynomier større end 3, desværre.</li>
+<li class="fragment appear">Vi kan dog faktorisere ligningen til.</li>
+<li class="fragment appear">\[\left( z^2+9 \right)\cdot\left( z^3-8 \right)  = 0\]</li>
+<li class="fragment appear">Nu kan vi bruge nulreglen.</li>
+<li class="fragment appear">Første parentes kan løses rimelig nemt.</li>
+<li class="fragment appear"><div>
+\begin{align*}
+z^2 +9 &= 0 \\
+z^2 &= - 9  \\
+z &= \pm \sqrt{-9} \\
+z_{1,2} &= \pm 3 \cdot i
+\end{align*}
+
+</div></li>
+<li class="fragment appear">Nu har vi 2 af de 5 løsninger.</li>
+
+</ul>
+</section>
+<section data-background="">
+<div style="font-size: 50%;">
+<ul>
+<li class="fragment appear">Nu tager vi fat på anden parentes.
+\[\left( z^3-8 \right)=0\]</li>
+<li class="fragment appear">Først skridt er nemt.
+\[z^3 = 8\]</li>
+<li class="fragment appear"><p>
+Herfra anvendes vores viden om enhedsrødder og de Moivres formel
+</p>
+
+<div>
+\begin{align*}
+z^3 &= 8\cdot 1 \\
+z^3 &= 8\cdot e^{2 \pi n \cdot i} \\
+z &= \sqrt[3]{8}\cdot e^{\frac{2 \pi n \cdot i}{3}} \\
+\end{align*}
+
+</div></li>
+<li class="fragment appear">Nu skal vi bare indsætte \(n=0,1,2\) i udtrykket for \(z\)</li>
+<li class="fragment appear">\(z_3= \sqrt[3]{8}\cdot e^{\frac{2 \pi \cdot 0 \cdot i}{3}} = \sqrt[3]{8} \cdot 1 = 2\)</li>
+<li class="fragment appear">\(z_4= \sqrt[3]{8}\cdot e^{\frac{2 \pi \cdot 1 \cdot i}{3}} = 2 \cdot e^{\frac{2 \pi \cdot i}{3}}\)</li>
+<li class="fragment appear">\(z_5= \sqrt[3]{8}\cdot e^{\frac{2 \pi \cdot 2 \cdot i}{3}} = 2 \cdot e^{\frac{4 \pi \cdot i}{3}}\)</li>
+<li class="fragment appear">De to sidste løsninger kan skrives om til rektangulær form vha Eulers ligning.</li>
+<li class="fragment appear">\(z_4= 2 \cdot e^{\frac{2 \pi \cdot i}{3}}= 2 \cdot \left( \cos\left(\frac{2 \pi}{3}\right)+\sin \left( \frac{2 \pi}{3} \right)\cdot i \right)= 2 \cdot \left( -\frac{1}{2} + 0.866\cdot i \right) = - 1 + 1.732\cdot i\)</li>
+<li class="fragment appear">\(z_5= 2 \cdot e^{\frac{4 \pi \cdot i}{3}}= 2 \cdot \left( \cos\left(\frac{4 \pi}{3}\right)+\sin \left( \frac{4 \pi}{3} \right)\cdot i \right)= 2 \cdot \left( -\frac{1}{2} - 0.866\cdot i \right) = - 1 - 1.732\cdot i\)</li>
+
+</ul>
+</section>
+<section data-background="">
+<div style="font-size: 50%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+Konklusion.
+</p>
+
+<p>
+Ligningen
+\[z^5+9z^3 -8z^2 -72 =0\]
+Har løsningerne
+</p>
+<div>
+\begin{align*}
+z_1 &= 3i \\
+z_2 &= -3i \\
+z_3 &= 2 \\
+z_4 &= -1 + 1.732 i \\
+z_5 &= -1 - 1.732 i
+\end{align*}
+
+</div>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+
+<div id="org3b294be" class="figure">
+<p><img src="./img/polynomiers_roedder.png" alt="polynomiers_roedder.png" width="500px" />
+</p>
+</div>
+</div>
+
+
+</section>
+<section id="slide-org1e8044e" data-background="">
+<h3 id="org1e8044e">Opgaver</h3>
+<div style="font-size: 60%;">
+<p>
+Ifølge algebraens fundamentalsætning har ethvert polynomium af n'te grad n rødder. I de følgende opgaver ved I da, hvor mange rødder til hvert polynomium, I skal bestemme. I vil blive øvet i forskellige løsningsstrategier i de forskellige opgaver.
+</p>
+
+<ol>
+<li>\(z^3+z^2-2z =0\)</li>
+<li>\(z^3-2z^2+2z =0\)</li>
+<li>\(z^4 =16\)</li>
+<li>\(z^3+8=0\)</li>
+<li>\(z^3=27i\)</li>
+
+</ol>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org0a52f4c" data-background="">
+<h2 id="org0a52f4c">Opgaver</h2>
+<div style="font-size: 60%;">
+<p>
+Evaluér, simplificér eller omskriv de følgende udtryk til rektangulær form
+</p>
+
+<ol>
+<li>\(Re \left( e^{2i z} \right) \text{ hvor } z=x+y i\)</li>
+<li>\(\left( -1 + \sqrt{3}\cdot i\right)^{\frac{1}{2}}\)</li>
+<li>\(\left| e^{\left( i^{\frac{1}{2}} \right)} \right|\)</li>
+<li>\(e^{i^3}\) Omskriv til rektangulær form.</li>
+<li>\(Im \left( 2^{i+3} \right)\) (Her skal man huske noget om logaritmeregler).</li>
+<li>\(z=1^i\)</li>
+<li>\(z=i^i\)</li>
+
+</ol>
+
+</section>
+<section id="slide-org321cf5c" data-background="">
+<h3 id="org321cf5c">Facitliste</h3>
+<div style="font-size: 60%;">
+<ol>
+<li>\(e^{-2y} \cos(2x)\)</li>
+<li>\(\sqrt{2}\cdot e^{\frac{\pi}{3} i}\) eller \(\sqrt{2}\cdot e^{\frac{4 \pi}{3} i}\)</li>
+<li>\(e^{\frac{1}{\sqrt{2}}}\) eller \(e^{-\frac{1}{\sqrt{2}}}\)</li>
+<li>\(0.540 - 0.841 i\)</li>
+<li>\(8 \sin\left(\ln(2)\right) =5.11\)</li>
+<li>\(z=1\)</li>
+<li>\(z=e^{-\frac{1}{2} \pi - 2 \pi \cdot n}\)</li>
+
+</ol>
+</section>
+</section>
+<section>
+<section id="slide-org2e53b98" data-background="">
+<h2 id="org2e53b98">Trigonometriske identiteter</h2>
+<div>
+\begin{align*}
+\cos \left( \theta \right) &= Re \left( e^{i \theta} \right) = \frac{e^{i \theta}+e^{-i \theta}}{2} \\
+\sin \left( \theta \right) &= Im \left( e^{i \theta} \right) = \frac{e^{i \theta}-e^{-i \theta}}{2 i}
+\end{align*}
+
+</div>
+</section>
+<section id="slide-org83cc26b" data-background="">
+<h3 id="org83cc26b">Først lidt simple identiteter</h3>
+<div style="font-size: 60%;">
+<p>
+Lad os udlede identiteterne på forrige slide
+</p>
+<div>
+\begin{align*}
+\cos \left( \theta \right) &= Re \left( e^{i \theta} \right) = \frac{e^{i \theta}+e^{-i \theta}}{2} \\
+\sin \left( \theta \right) &= Im \left( e^{i \theta} \right) = \frac{e^{i \theta}-e^{-i \theta}}{2 i}
+\end{align*}
+
+</div>
+</section>
+<section data-background="">
+<div style="font-size: 60%;">
+<ol>
+<li>Omskriv
+\[e^{i \theta} \quad \text{og} \quad e^{- i \theta}\]
+vha. Eulers/de Moivres formel.</li>
+<li>Kombinér de to ligninger på forskellige måder, så der optræder udtryk for hhv. \(\cos(\theta)\) og \(\sin (\theta)\).</li>
+
+</ol>
+</section>
+<section id="slide-orged93f0b" data-background="">
+<h3 id="orged93f0b">Fra multiple vinkler til potenser</h3>
+<div style="font-size: 60%;">
+<p>
+Vi vil gerne omskrive \(\cos(3 \theta)\) og \(\sin (3 \theta)\) som potenser af \(\cos(\theta)\) og \(\sin(\theta)\).
+</p>
+<ul>
+<li class="fragment appear"><p>
+de Moivres formel
+</p>
+<div>
+\begin{align*}
+\cos (3 \theta) + i \sin(3 \theta) &= \left( \cos(\theta) + i \sin(\theta) \right)^3 \\
+&= \left( \cos^3(\theta) - 3 \cos(\theta)\cdot \sin^2(\theta) \right) + i\left( 3 \sin(\theta) \cdot \cos^2(\theta) -\sin^3(\theta) \right)
+\end{align*}
+
+</div></li>
+
+<li class="fragment appear"><p>
+De reelle og imaginære dele på hver side af lighedstegnet sættes lig hinanden hver for sig
+</p>
+<div>
+\begin{align}
+\cos(3 \theta) &= \cos^3(\theta) - 3 \cos(\theta) \cdot \sin^2(\theta) \\
+\sin(3\theta) &= 3 \sin(\theta) \cdot \cos^2(\theta) -\sin^3(\theta) \\
+\end{align}
+
+</div></li>
+
+</ul>
+
+</section>
+<section data-background="">
+<div style="font-size: 60%;">
+<p>
+Udgangspunkt i \(\cos (3 \theta)\)
+</p>
+<div>
+\begin{align*}
+\cos(3 \theta) &= \cos^3(\theta) - 3 \cos(\theta) \cdot \sin^2(\theta) \\
+\cos(3 \theta) &= \cos(\theta) \left(\cos (\theta)^2 - 3 \cdot \sin^2(\theta) \right)
+\end{align*}
+
+</div>
+
+<ul>
+<li class="fragment appear"><p>
+Parentesen kan reduceres ved hjælp af trigonometriens grundrelation
+</p>
+<div>
+\begin{align*}
+  \cos^2(\theta) + \sin^2(\theta) &= 1 \to \\
+  \cos^2(\theta) - 1 &= -\sin^2(\theta) \to \\
+  3\cos^2(\theta) - 3 &= -3\sin^2(\theta)
+\end{align*}
+
+</div></li>
+<li class="fragment appear"><p>
+Det sidste udtryk indsættes i ligningen.
+</p>
+<div>
+\begin{align*}
+  \cos(3 \theta) &= \cos(\theta) \left( \cos^2(\theta) +3 \cos^2(\theta) -3 \right) \to \nonumber \\
+  \cos(3 \theta) &= \cos(\theta) \left( 4 \cos^2(\theta) -3 \right) \to \nonumber \\
+  \cos(3 \theta) &= 4 \cos^3(\theta) -3\cos(\theta) 
+\end{align*}
+
+</div></li>
+
+</ul>
+
+</section>
+<section data-background="">
+<div style="font-size: 60%;">
+<ul>
+<li class="fragment appear"><p>
+På tilsvarende vis kan \(\sin(3\theta)\) omskrives
+</p>
+<div>
+\begin{align*}
+\sin(3\theta) &= 3 \sin(\theta) \cdot \cos^2(\theta) -\sin^3(\theta) \\
+\sin(3\theta) &= \sin(\theta) \cdot \left(3\cos^2(\theta) -\sin^2(\theta)\right) \\
+\sin(3\theta) &= \sin(\theta) \cdot \left(3 - 3\sin^2 \left( \theta \right) -\sin^2(\theta)\right) \\
+\sin(3\theta) &= \sin(\theta) \cdot \left(3 - 4\sin^2(\theta)\right) \\
+\sin(3\theta) &= 3\sin(\theta) - 4\sin^3(\theta) 
+\end{align*}
+
+</div></li>
+<li class="fragment appear"><p>
+Konklusion
+</p>
+<div>
+\begin{align*}
+\cos(3\theta) &= 4 \cos^3 \left( \theta \right) - 3 \cos (\theta)\\
+\sin(3\theta) &= 3\sin(\theta) - 4\sin^3(\theta) 
+\end{align*}
+
+</div></li>
+
+</ul>
+</section>
+<section id="slide-org56fc780" data-background="">
+<h3 id="org56fc780">Fra potenser til multiple vinkler</h3>
+<div style="font-size: 60%;">
+<p>
+Omskrivning af \(\cos^3 (\theta)\) til noget med \(\cos(3 \theta)\) og \(\cos(\theta)\).
+</p>
+<div>
+\begin{align*}
+\cos^3(\theta) &= \left( \frac{e^{i\theta}+e^{-i\theta}}{2} \right)^3\\
+\cos^3(\theta) &= \frac{1}{2^3}\left( e^{i\theta}+e^{-i\theta} \right)^3\\
+\cos^3(\theta) &= \frac{1}{2^3}\left( \left(e^{i\theta}\right)^3+\left(e^{-i\theta}\right)^3 + 3 \cdot e^{i \theta} +  3 \cdot e^{-i \theta} \right)\\
+\cos^3(\theta) &= \frac{1}{2^3}\left( \left(e^{i\theta}\right)^3+\left(e^{-i\theta}\right)^3 + 3 \cdot \left( e^{i \theta} + e^{-i \theta}\right) \right)\\
+\end{align*}
+
+</div>
+</section>
+<section data-background="">
+<div style="font-size: 60%;">
+<ul>
+<li><p>
+Her fra udnyttes det at
+</p>
+<div>
+\begin{align*}
+e^{i\theta}  +  e^{-i \theta} &=  2 \cos \left( \theta \right) \\
+\left( e^{i\theta} \right)^3 + \left( e^{-i \theta} \right)^3 &= e^{i 3 \theta} + e^{-i 3 \theta} = 2 \cos \left( 3 \theta \right) \\
+\end{align*}
+
+</div></li>
+
+</ul>
+<ul>
+<li class="fragment appear"><p>
+Således at
+</p>
+<div>
+\begin{align*}  
+\cos^3(\theta) &= \frac{1}{2^3}\left( \left(e^{i\theta}\right)^3+\left(e^{-i\theta}\right)^3 + 3 \cdot \left( e^{i \theta} + e^{-i \theta}\right) \right)\\
+\cos^3(\theta) &= \frac{1}{2^3}\left( 2 \cos \left( 3 \theta \right) + 3 \cdot 2 \cos \left( \theta \right) \right)\\
+\cos^3(\theta) &= \frac{1}{4} \cos \left( 3 \theta \right) +\frac{3}{4} \cos \left( \theta \right) 
+\end{align*}
+
+</div></li>
+
+</ul>
+</section>
+<section id="slide-org4a50e6e" data-background="">
+<h3 id="org4a50e6e">Opgave</h3>
+<div style="font-size: 60%;">
+<p>
+Anvend (bl.a.) de Moivres formel til at eftervise følgende trigonometriske identiteter:
+</p>
+<div>
+\begin{align*}
+\sin \left( 2 \theta \right) &= 2 \cdot \sin \left( \theta \right)\cdot \cos \left( \theta \right)\\
+\cos \left( 2 \theta \right) &= \cos^2 \left( \theta \right)- \sin^2 \left( \theta \right)\\
+\sin^2 \left( \theta \right) &= \frac{1-\cos \left( 2 \theta \right)}{2} \\
+\cos^2 \left( \theta \right) &= \frac{1+\cos \left( 2 \theta \right)}{2}
+\end{align*}
+
+</div>
+</section>
+<section id="slide-org2f55dc8" data-background="">
+<h3 id="org2f55dc8">En ekstra udfordring</h3>
+<div style="font-size: 60%;">
+<ol>
+<li>Benyt de Moivres formel ned \(n=4\) til at eftervise at
+\[\cos \left( 4 \theta \right) = 8 \cos^4 \left( \theta \right) - 8 \cos^2 \left( \theta \right)+1\]</li>
+
+<li>Brug forrige ligning til at udlede at
+\[\cos\left(\frac{\pi}{8} \right) = \sqrt{\frac{2+\sqrt{2}}{4}}\]
+<ul>
+<li>Hint: Sæt \(\theta=\frac{\pi}{8}\) og sæt \(\cos^2 \left( \frac{\pi}{8} \right)=w\), så er der nemlig en 2.gradsligning, som kan løses.</li>
+
+</ul></li>
+
+</ol>
+</section>
+<section id="slide-orgd5c64c0" data-background="">
+<h3 id="orgd5c64c0">Og endnu en</h3>
+<ol>
+<li>Anvend de Moivres formel til at eftervise at
+\[16 \sin^4 \left( \theta \right) = \frac{1}{8} \cos \left( 4 \theta \right) - \frac{1}{2}\cos \left( 2 \theta \right) + \frac{3}{8}\]</li>
+<li>Eftervis at den gennemsnitslige værdi for \(\sin^4 \left( \theta \right)\) over en periode (\(2 \pi\)) er \(\frac{3}{8}\).
+<ul>
+<li>Hint: Altså bestem integralet \(\frac{\int_0^{2\pi}\sin^4 \left( \theta \right)\,dx}{2 \pi}\), men brug højresiden af forrige ligning i stedet for.</li>
+
+</ul></li>
+
+</ol>
+</section>
+</section>
+<section>
+<section id="slide-orgd0fc411" data-background="">
+<h2 id="orgd0fc411">Komplekse logaritmer og eksponenter</h2>
+</section>
+</section>
+<section>
+<section id="slide-orgb982d24" data-background="">
+<h2 id="orgb982d24">Anvendelse i differential- og integralregning</h2>
+</section>
+</section>
+<section>
+<section id="slide-org9081a2b" data-background="">
+<h2 id="org9081a2b">Matematikprojekt</h2>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/search/search.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: false,
+slideNumber: 'c/t',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'slide',
+transitionSpeed: 'default',
+slideNumber:"c/t",progress:true,transition:"slide",navigationMode:"default",history:false,hash:true,
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>
